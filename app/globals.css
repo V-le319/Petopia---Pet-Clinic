@@ -26,6 +26,11 @@
     @apply w-full bg-mainBG min-h-screen flex justify-center items-center flex-col py-10 px-6;
   }
 
+  .logo {
+    @apply text-2xl font-semibold text-headline drop-shadow-sm shadow-headline;
+     font-family: var(--font-figtree);
+  }
+
   .heading {
     @apply text-headline text-3xl font-semibold;
     font-family: var(--font-figtree);
@@ -35,6 +40,18 @@
     @apply text-text text-base;
     font-family: var(--font-inter);
   }
+
+  .links {
+    @apply duration-200 hover:text-headline hover:border-b-2 hover:border-headline
+  }
+
+  .button {
+    @apply text-headline font-medium text-base bg-transparent px-5 py-2 shadow-sm  shadow-headline rounded-xl hover:text-white hover:bg-headline
+  }
+
+  .navbar-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
 
   }
 
