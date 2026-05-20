@@ -10,6 +10,8 @@ module.exports = {
       colors: {
           mainBG: "#FBF8FF", 
           headline: "#5750A9",     
+          lightPurple: "#8B86CC",
+          lightLavender: "#C4BFEA",
           text: "#474551",   
          tagHover: "#EADFE7 ", 
           smallTag: "#854E5F", 

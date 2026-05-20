@@ -32,7 +32,7 @@
   }
 
   .heading {
-    @apply text-headline text-3xl font-semibold;
+    @apply text-headline text-3xl font-bold;
     font-family: var(--font-figtree);
   }
   
@@ -42,15 +42,33 @@
   }
 
   .links {
-    @apply duration-200 hover:text-headline hover:border-b-2 hover:border-headline
+    @apply duration-200 hover:text-headline hover:scale-105;
   }
 
   .button {
-    @apply text-headline font-medium text-base bg-transparent px-5 py-2 shadow-sm  shadow-headline rounded-xl hover:text-white hover:bg-headline
+    @apply text-center whitespace-nowrap text-headline font-medium text-base bg-transparent px-5 py-2 shadow-sm  shadow-headline rounded-xl hover:text-white hover:bg-headline
+  }
+
+  .login-btn {
+    @apply text-center whitespace-nowrap text-white font-medium duration-200 text-base px-5 py-2 shadow-sm bg-headline rounded-xl hover:bg-darkHover;
+    box-shadow: 0 2px 6px rgba(40, 35, 90, 0.7);
   }
 
   .navbar-shadow {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.login-card {
+  font-family: var(--font-inter);
+  @apply w-80 h-[480px] px-6 bg-lightLavender flex flex-col justify-center items-center gap-6 py-6 rounded-xl;
+}
+
+.card-login_shadow {
+   box-shadow: 0 6px 32px rgba(40, 35, 90, 0.7);
+}
+
+.login-label {
+ @apply uppercase text-text font-medium
 }
 
   }
