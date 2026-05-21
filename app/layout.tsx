@@ -2,6 +2,7 @@ import './globals.css'
 
 import { Figtree, Inter } from 'next/font/google'
 import 'easymde/dist/easymde.min.css'
+import Providers from './providers'
 
 
 const figtree = Figtree({ subsets: ['latin'], variable: '--font-figtree' })
@@ -16,8 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}
-       
+      <body>
+        <Providers> 
+        {children}
+       </Providers>
       </body>
     </html>
   )

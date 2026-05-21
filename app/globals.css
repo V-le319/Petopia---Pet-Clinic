@@ -32,7 +32,7 @@
   }
 
   .heading {
-    @apply text-headline text-3xl font-bold;
+    @apply text-headline text-4xl font-bold;
     font-family: var(--font-figtree);
   }
   
