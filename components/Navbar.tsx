@@ -11,7 +11,7 @@ const Navbar = () => {
   const { data: session } = useSession()
 
   return (
-    <div className="max-w-full relative z-10 h-24 px-6 bg-white flex-between navbar-shadow">
+    <div className="max-w-full relative z-10 h-auto p-6 bg-white flex-between navbar-shadow">
       <div className='flex-1'>
         <Link href="/"><p className='logo'>Petopia</p></Link>
       </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className='absolute top-24 left-0 w-full bg-white flex flex-col text-base py-4 sm:hidden'>
+        <div className='absolute top-full left-0 w-full bg-white flex flex-col text-center text-base py-4 sm:hidden'>
           <Link href="/#services" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>Services</Link>
           <Link href="/#about" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>About</Link>
           <Link href="/#contact" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>Contact</Link>
