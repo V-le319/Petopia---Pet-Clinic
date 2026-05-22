@@ -1,17 +1,20 @@
+import About from '@/components/About'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
-import Reviews from '@/components/Reviews'
 import Services from '@/components/Services'
+import Team from '@/components/Team'
 import React from 'react'
 
 const Home = () => {
   return (
     <>
+    
     <Navbar/>
-    <div className="main_container">
+    <div className="">
       <Hero/>
-      <Reviews/>
       <Services/>
+      <About/>
+      <Team/>
     </div>
     </>
   )

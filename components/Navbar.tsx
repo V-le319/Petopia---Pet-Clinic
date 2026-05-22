@@ -1,17 +1,39 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { LucideMenu, User, X, LogOut } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useSession, signOut } from 'next-auth/react'
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const { data: session } = useSession()
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { data: session } = useSession();
+
+  useEffect(() => {
+  const handleScroll = () => setScrolled(window.scrollY > 10)
+  window.addEventListener('scroll', handleScroll)
+  return () => window.removeEventListener('scroll', handleScroll)
+}, []);
+
+useEffect(() => {
+  let timer: ReturnType<typeof setTimeout>
+  
+  const handleScroll = () => {
+    setScrolled(true)
+    clearTimeout(timer)
+    timer = setTimeout(() => setScrolled(false), 500)
+  }
+   // set up listener
+  window.addEventListener('scroll', handleScroll)
+  return () => window.removeEventListener('scroll', handleScroll)  // clean up when component unmounts
+}, [])
 
   return (
-    <div className="max-w-full relative z-10 h-auto p-6 bg-white flex-between navbar-shadow">
+    <div className={`max-w-full fixed top-0 left-0 right-0 z-50 h-auto p-6 flex-between transition-all duration-300 ${
+  scrolled ? 'bg-white/50 backdrop-blur-sm' : 'bg-white navbar-shadow'
+}`}>
       <div className='flex-1'>
         <Link href="/"><p className='logo'>Petopia</p></Link>
       </div>

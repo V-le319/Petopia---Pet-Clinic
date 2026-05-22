@@ -69,7 +69,7 @@ const Services = () => {
                       height={26}/>
               </div>
 
-              <div className="mb-6">
+              <div className="mb-6 flex flex-col gap-2">
                 <h2 className="text-2xl text-headline font-semibold">{service.title}</h2>
                 <p className="content_text">{service.description}</p>
               </div>
