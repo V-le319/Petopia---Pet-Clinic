@@ -6,7 +6,7 @@ import React from 'react'
 const Hero = () => {
   return (
     <>
-    <section className="w-full h-full bg-mainBG flex justify-center items-start flex-col p-6  sm:py-24 ">
+    <section className="w-full h-full bg-mainBG flex justify-center items-start flex-col p-6  sm:py-20 ">
     <div id="hero" className="max-w-6xl mx-auto grid grid-cols-1 items-start sm:grid-cols-2 gap-12">
       <div className="content flex flex-col gap-6">
         <div className="bg-tagHover p-2 w-fit rounded-full text-center px-4 text-sm">
@@ -23,9 +23,8 @@ const Hero = () => {
     <div className="w-full h-[400px] sm:h-[500px] relative">
       <Image src="/images/360_F_335129835_9hAvCOWfyEYZxOHW1lD3w8E1Ai2rBgdB.jpg"
       alt="happy pet"
-    width={600}
-    height={500}
-    className=" rounded-2xl object-cover"/>
+      fill
+      className=" rounded-2xl object-cover"/>
       
     </div>
 
