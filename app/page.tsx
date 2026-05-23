@@ -1,4 +1,5 @@
 import About from '@/components/About'
+import BookingForm from '@/components/BookingForm'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
 import Services from '@/components/Services'
@@ -15,6 +16,7 @@ const Home = () => {
       <Services/>
       <About/>
       <Team/>
+      <BookingForm/>
     </div>
     </>
   )

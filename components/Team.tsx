@@ -53,11 +53,11 @@ const Team = () => {
               <h1 className="heading">Meet Our Team</h1>
           </div>
 
-          <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10">
+          <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-14">
               {team.map((team) => (
                 <div className="team-card flex flex-row items-stretch"
                       key={team.name}>
-                  <div className="relative w-[150px] min-h-[150px] flex-shrink-0 rounded-lg self-stretch overflow-hidden bg-tagHover/40">
+                  <div className="relative w-[100px] min-h-[100px] flex-shrink-0 rounded-lg self-stretch overflow-hidden bg-tagHover/40">
                                   <Image src={team.image}
                                          alt={team.name}
                                          fill

@@ -32,7 +32,7 @@
   }
 
   .heading {
-    @apply text-headline text-4xl font-bold;
+    @apply text-headline text-5xl font-bold;
     font-family: var(--font-figtree);
   }
   
@@ -77,9 +77,20 @@
 }
 
 .team-card {
-  @apply rounded-2xl bg-white/50 flex flex-row justify-between items-start gap-6 p-4 drop-shadow-sm
+  @apply rounded-2xl bg-white/40 flex flex-row justify-between items-start gap-6 p-4 drop-shadow-sm
 }
 
+.form {
+  @apply w-full h-full p-10 flex flex-col rounded-2xl gap-8 justify-center items-center bg-headline/40
+}
+
+.form-input {
+  @apply w-full content_text font-medium flex flex-col justify-center items-start gap-2
+}
+
+.input {
+  @apply w-full px-2 h-10 rounded-lg 
+}
   
 
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const About = () => {
   const stats = [
@@ -40,9 +41,12 @@ const About = () => {
             in Saigon for over 2,000 families. Our team of licensed vets and
             groomers treat every animal like their own.
           </p>
-          <button className="inline-flex items-center gap-2 button-reversed duration-200 text-white text-sm font-medium px-5 py-2.5 rounded-full">
+
+          <Link href="/#team"><button className="inline-flex items-center gap-2 button-reversed duration-200 text-white text-sm font-medium px-5 py-2.5 rounded-full">
             Our Medical Team →
           </button>
+          </Link>
+          
         </div>
       </div>
 
