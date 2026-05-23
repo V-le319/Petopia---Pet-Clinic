@@ -7,6 +7,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --popover: white;
+  --popover-foreground: #1a1a1a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,7 +37,7 @@
     @apply text-headline text-5xl font-bold;
     font-family: var(--font-figtree);
   }
-  
+
   .content_text {
     @apply text-text text-base;
     font-family: var(--font-inter);
@@ -89,10 +91,8 @@
 }
 
 .input {
-  @apply w-full px-2 h-10 rounded-lg 
+  @apply w-full px-2 h-10 rounded-lg bg-white
 }
-  
-
 
 .w-md-editor-toolbar {
   padding: 10px !important;

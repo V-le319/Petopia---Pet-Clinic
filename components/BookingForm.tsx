@@ -1,4 +1,5 @@
 import React from 'react'
+import DatePicker from './DatePicker'
 
 const BookingForm = () => {
   return (
@@ -53,8 +54,7 @@ const BookingForm = () => {
 
                   <div className="form-input">
                     <label>Date:</label>
-                    <input className="input"
-                            placeholder='Your Name...'/>
+                      <DatePicker/>
                   </div>
 
                   <div className="form-input">
