@@ -31,7 +31,7 @@ useEffect(() => {
 }, [])
 
   return (
-    <div className={`max-w-full fixed top-0 left-0 right-0 z-50 h-auto p-6 flex-between transition-all duration-300 ${
+    <div className={`max-w-full sticky top-0 left-0 right-0 z-50 h-auto p-6 flex-between transition-all duration-300 ${
   scrolled ? 'bg-white/50 backdrop-blur-sm' : 'bg-white navbar-shadow'
 }`}>
       <div className='flex-1'>

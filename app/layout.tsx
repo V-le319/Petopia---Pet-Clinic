@@ -1,7 +1,7 @@
 import './globals.css'
 
 import { Figtree, Inter } from 'next/font/google'
-import 'easymde/dist/easymde.min.css'
+
 import Providers from './providers'
 
 
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="relative min-h-screen bg-[url('/images/wallpaper.jpg')] bg-cover bg-center bg-fixed">
         <Providers> 
         {children}
        </Providers>

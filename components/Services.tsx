@@ -50,10 +50,10 @@ const Services = () => {
 
   return (
     <>
-    <section id="services" className="w-full h-full bg-mainBG  px-6 py-16 sm:py-20 ">
+    <section id="services" className="w-full h-full bg-mainBG/30 mb-8 px-10 sm:px-16 py-10 gap-6 sm:py-20 ">
       <div className="max-w-6xl mx-auto flex flex-col gap-8">
       
-      <div className="w-full sm:w-1/2 flex flex-col justify-start items-start gap-4">
+      <div className="w-full sm:w-1/2 flex flex-col justify-start items-start gap-4 mb-8">
         <h1 className="heading">Our Services</h1>
         <p className="content_text">Everything your pet needs, all in one place. From routine visits to emergency care, we've got them covered.</p>
       </div>

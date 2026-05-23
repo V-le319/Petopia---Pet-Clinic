@@ -10,9 +10,10 @@ const About = () => {
   ]
 
   return (
-    <section className="w-screen bg-opacity-70 px-16 py-10 gap-6 sm:py-20"
-      style={{ background: 'linear-gradient(to bottom, #FBF8FF 0%, #5750A920 15%, #5750A960 60%, #5750A9 100%)' }}
+    <section className="w-screen bg-opacity-30 px-10 sm:px-16 py-10 gap-6 sm:py-20"
+      style={{ background: 'linear-gradient(to bottom, transparent 0%, #5750A920 20%, #5750A960 70%, #5750A9 90%, #5750A960 100%)' }}
     >
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#FBF8FF4D] to-transparent pointer-events-none" />
       {/* Top: image + content */}
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center gap-11 sm:gap-16 mb-12">
         
@@ -28,7 +29,7 @@ const About = () => {
 
         {/* Text */}
         <div className="flex-1">
-          <span className="inline-block text-xs tracking-widest uppercase bg-white/35 text-smallTag font-normal px-3 py-1 rounded-full mb-4">
+          <span className="inline-block text-xs tracking-widest uppercase bg-white/35 text-smallTag font-normal px-3 py-1 rounded-full mb-8">
             About us
           </span>
           <h2 className="text-3xl font-semibold heading leading-snug mb-4">

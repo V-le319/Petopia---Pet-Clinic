@@ -76,6 +76,10 @@
   @apply text-3xl text-headline
 }
 
+.team-card {
+  @apply rounded-2xl bg-white/50 flex flex-row justify-between items-start gap-6 p-4 drop-shadow-sm
+}
+
   
 
 
