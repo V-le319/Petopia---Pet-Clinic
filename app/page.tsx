@@ -1,5 +1,6 @@
 import About from '@/components/About'
 import BookingForm from '@/components/BookingForm'
+import Facilities from '@/components/Facilities'
 import FindUs from '@/components/FindUs'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
@@ -18,6 +19,7 @@ const Home = () => {
       <Services/>
       <About/>
       <Team/>
+      <Facilities/>
       <BookingForm/>
       <FindUs/>
       <Footer/>

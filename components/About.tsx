@@ -30,7 +30,7 @@ const About = () => {
 
         {/* Text */}
         <div className="flex-1">
-          <span className="inline-block text-xs tracking-widest uppercase bg-white/35 text-smallTag font-normal px-3 py-1 rounded-full mb-8">
+          <span className="inline-block text-xs tracking-widest uppercase bg-white/35 text-smallTag font-normal px-3 py-1 rounded-full mb-6">
             About us
           </span>
           <h2 className="text-3xl font-semibold heading leading-snug mb-4">
@@ -42,10 +42,17 @@ const About = () => {
             groomers treat every animal like their own.
           </p>
 
+        <div className="grid grid-cols-2">
           <Link href="/#team"><button className="inline-flex items-center gap-2 button-reversed duration-200 text-white text-sm font-medium px-5 py-2.5 rounded-full">
             Our Medical Team →
           </button>
           </Link>
+
+          <Link href="/#facilities"><button className="inline-flex items-center gap-2 button-reversed duration-200 text-white text-sm font-medium px-5 py-2.5 rounded-full">
+            Our Facilities →
+          </button>
+          </Link>
+        </div>
           
         </div>
       </div>

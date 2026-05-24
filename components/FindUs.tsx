@@ -40,10 +40,10 @@ const FindUs = () => {
               <p className="content_text-reversed">We're easy to reach, find our details below.</p>
             </div>
 
-            <div className="contact-container">
+            <div className="contact-container" >
               
                 {contactCard.map((contact) => (
-                  <div className="contact-card">
+                  <div className="contact-card" key={contact.title}>
                     <div className="">
                       <img src={contact.icon}
                             className="bg-transparent w-8 h-8 sm:h-12 sm:w-12 rounded-full p-1"/>
