@@ -1,7 +1,27 @@
+'use client'
 import React from 'react'
 import DatePicker from './DatePicker'
+import TimeSlot from './TimeSlot'
+import { toast } from 'sonner'
 
 const BookingForm = () => {
+    const [date, setDate] = React.useState<Date | undefined>(undefined)
+    const [time, setTime] = React.useState<string | undefined>(undefined)
+
+    const handleSubmit = (e: React.FormEvent) => {
+      e.preventDefault()
+
+      if(!date || !time) {
+        toast.error ('Please select a date and time slot.', 
+                      {duration: 3000}
+                    )
+    return
+      }
+      toast.success ('Booking confirmed!',
+                      {duration: 3000}
+                    )
+    }
+
   return (
     <>
     <section id="booking">
@@ -9,27 +29,30 @@ const BookingForm = () => {
         <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-8">
             
               <div className='text-center'>
-                <span className="inline-block text-xs tracking-widest uppercase bg-white/90 text-smallTag font-normal px-3 py-1 rounded-full mb-4">
+                <span className="inline-block text-xs tracking-widest uppercase bg-tagHover/60 text-smallTag font-normal px-3 py-1 rounded-full mb-4">
             easy online booking
           </span>
                 <h1 className="heading mb-4 sm:mb-8">Booking an Appointment</h1>
               </div>
 
-              <form className="form">
+              <form className="form"
+                    onSubmit={handleSubmit}>
                 <div className="info w-full grid grid-cols-1 sm:px-10 sm:gap-10 sm:grid-cols-2 gap-6">
                   <div className="form-input">
                     <label>Your Name:</label>
                     <input className="input"
-                            placeholder='Your Name...'/>
+                            placeholder='Your Name...'
+                            required/>
                   </div>
 
                   <div className="form-input">
                     <label>Pet Name:</label>
                     <input className="input"
-                            placeholder='Your Name...'/>
+                            placeholder='Your Name...'
+                            required/>
                   </div>
 
-                  <div className="form-input">
+                  <div className="form-input required">
                     <label>Pet Type:</label>
                     <select className="input">
                       <option className="content_text text-opacity-60">--Select--</option>
@@ -39,7 +62,7 @@ const BookingForm = () => {
                     </select>
                   </div>
 
-                  <div className="form-input">
+                  <div className="form-input required">
                     <label>Service:</label>
                     <select className="input">
                       <option className="content_text text-opacity-60">--Select--</option>
@@ -52,16 +75,12 @@ const BookingForm = () => {
                     </select>
                   </div>
 
-                  <div className="form-input">
+                  <div className="form-input required">
                     <label>Date:</label>
-                      <DatePicker/>
+                      <DatePicker date={date} setDate={setDate} />
+                {date && <TimeSlot date={date} time={time} setTime={setTime} />}
                   </div>
 
-                  <div className="form-input">
-                    <label>Time Slot:</label>
-                    <input className="input"
-                            placeholder='Your Name...'/>
-                  </div>
                 </div>
 
                   <div className="form-input w-full sm:px-10">
@@ -70,7 +89,8 @@ const BookingForm = () => {
                           placeholder=""/>
                 </div>
                 
-                <button className="button-reversed w-full py-2 sm:mt-6 sm:py-4 sm:w-1/2">Confirm Booking 🐾</button>
+                <button className="button-reversed w-full py-2 sm:mt-6 sm:py-4 sm:w-1/2"
+                        type="submit">Confirm Booking 🐾</button>
               </form>
         </div>
       </div>

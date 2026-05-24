@@ -4,14 +4,22 @@ import { Calendar } from '@/components/ui/calendar'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { format } from 'date-fns'
 
-const DatePicker = () => {
-    const [date, setDate] = React.useState<Date | undefined>(undefined)
+
+
+    interface DatePickerPros {
+      date: Date | undefined;
+      setDate: (date: Date | undefined) => void
+    }
+
+    const DatePicker = ({ date, setDate } : DatePickerPros) => {
  
   return (
     
     <Popover>
       <PopoverTrigger asChild>
-        <button className="input text-left px-3">
+        <button type="button"
+                className="input text-left px-3"
+                >
           {date ? format(date, 'dd/MM/yyyy') : 'Select a date...'}
         </button>
       </PopoverTrigger>

@@ -38,8 +38,23 @@
     font-family: var(--font-figtree);
   }
 
+  .subheading {
+    @apply text-headline text-3xl font-bold;
+    font-family: var(--font-figtree);
+  }
+
+  .subheading-reversed {
+    @apply text-mainBG/80 text-3xl font-bold;
+    font-family: var(--font-figtree);
+  }
+
   .content_text {
     @apply text-text text-base;
+    font-family: var(--font-inter);
+  }
+
+  .content_text-reversed {
+    @apply text-mainBG/70 text-base;
     font-family: var(--font-inter);
   }
 
@@ -80,6 +95,14 @@
 
 .team-card {
   @apply rounded-2xl bg-white/40 flex flex-row justify-between items-start gap-6 p-4 drop-shadow-sm
+}
+
+.contact-container {
+  @apply grid grid-cols-2 sm:grid-cols-4 gap-10 sm:gap-16
+}
+
+.contact-card {
+  @apply p-4 bg-darkHover/90 flex flex-col gap-4 justify-between items-center rounded-2xl
 }
 
 .form {

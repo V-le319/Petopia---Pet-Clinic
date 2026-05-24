@@ -4,6 +4,7 @@ import { Figtree, Inter, Geist } from 'next/font/google'
 
 import Providers from './providers'
 import { cn } from "@/lib/utils";
+import { Toaster } from '@/components/ui/sonner';
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className="relative min-h-screen bg-[url('/images/wallpaper.jpg')] bg-cover bg-center bg-fixed">
         <Providers> 
         {children}
+        <Toaster />
        </Providers>
       </body>
     </html>
