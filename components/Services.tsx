@@ -58,7 +58,7 @@ const Services = () => {
         <p className="content_text">Everything your pet needs, all in one place. From routine visits to emergency care, we've got them covered.</p>
       </div>
 
-      <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10">
+      <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-10">
         {services.map((service) => (
           <div className="grid-card "
                 key={service.title}>
@@ -69,17 +69,17 @@ const Services = () => {
                       height={26}/>
               </div>
 
-              <div className="mb-6 flex flex-col gap-2">
+              <div className="sm:mb-6 flex flex-col gap-2 flex-1">
                 <h2 className="text-2xl text-headline font-semibold">{service.title}</h2>
                 <p className="content_text">{service.description}</p>
               </div>
 
               <div className="w-full h-px bg-text bg-opacity-40"></div>
 
-              <div className="w-full flex-between py-2">
+              <div className="w-full grid grid-cols-2 ">
                 <p className="text-4xl text-headline font-semibold">{service.price}</p>
                 <Link href="#booking"
-                      className="button">
+                      className="button flex items-center justify-center">
                         Booking
                   </Link>
               </div>

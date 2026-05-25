@@ -9,7 +9,11 @@ import { useSession, signOut } from 'next-auth/react'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { data: session } = useSession();
+  //const { data: session } = useSession();
+  const { data: session, status } = useSession();
+
+  console.log('session:', session)
+console.log('image:', session?.user?.image)
 
   useEffect(() => {
   const handleScroll = () => setScrolled(window.scrollY > 10)
@@ -28,24 +32,31 @@ useEffect(() => {
    // set up listener
   window.addEventListener('scroll', handleScroll)
   return () => window.removeEventListener('scroll', handleScroll)  // clean up when component unmounts
-}, [])
+}, []);
+
+
 
   return (
-    <div className={`max-w-full sticky top-0 left-0 right-0 z-50 h-auto p-6 flex-between transition-all duration-300 ${
+    <div className={`max-w-screen sticky top-0 left-0 right-0 z-50 h-auto p-4  flex-between transition-all duration-300 ${
   scrolled ? 'bg-white/50 backdrop-blur-sm' : 'bg-white navbar-shadow'
 }`}>
-      <div className='flex-1'>
-        <Link href="/"><p className='logo'>Petopia</p></Link>
+      <Link href="/" className='w-1/3 flex items-center gap-2'>
+      <div className='flex items-center gap-2'>
+        <img src="/images/petopia-logo-Photoroom.png"
+              width={40}
+              height={60}/>
+        <p className='logo'>Petopia</p>
       </div>
+      </Link>
 
-      <div className='hidden sm:flex gap-8 self-center text-text text-lg font-medium'>
+      <div className='hidden w-1/3 sm:flex items-center justify-center gap-8 self-center text-text text-lg font-normal'>
         <Link href="/#services" className='links'>Services</Link>
         <Link href="/#about" className='links'>About</Link>
         <Link href="/#contact" className='links'>Contact</Link>
       </div>
 
-      <div className='flex-1 flex justify-end gap-4 sm:gap-6'>
-        <Link href="/#booking" className='button'>Book Now</Link>
+      <div className='w-1/3 flex justify-end gap-4 sm:gap-6'>
+        <Link href="/#booking" className='button hidden sm:flex items-center'>Book Now</Link>
 
         {/* Desktop */}
         {session ? (
@@ -70,24 +81,17 @@ useEffect(() => {
         </button>
 
         {/* Mobile */}
-        {session ? (
-          <div className='sm:hidden flex items-center gap-2 self-center'>
-            {session.user?.image && (
-              <Image
-                src={session.user.image}
-                width={32}
-                height={32}
-                alt="avatar"
-                className="rounded-full"
-              />
-            )}
-            <button onClick={() => signOut()}><LogOut size={20}/></button>
-          </div>
-        ) : (
-          <Link href="/api/auth/signin" className='sm:hidden self-center p-2 rounded-full hover:text-white hover:bg-headline'>
-            <User size={28}/>
-          </Link>
-        )}
+        {status === 'loading' ? null : session ? (
+  <div className='sm:hidden flex items-center self-center'>
+    {session.user?.image && (
+      <Image src={session.user.image} width={28} height={28} alt="avatar" className="rounded-full"/>
+    )}
+  </div>
+) : (
+  <Link href="/api/auth/signin" className='sm:hidden self-center p-1 rounded-full hover:text-white hover:bg-headline'>
+    <User size={22}/>
+  </Link>
+)}
 
         
       </div>
@@ -97,6 +101,10 @@ useEffect(() => {
           <Link href="/#services" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>Services</Link>
           <Link href="/#about" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>About</Link>
           <Link href="/#contact" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>Contact</Link>
+          <button onClick={() => signOut()}
+                  className="w-full px-4 py-2 duration-200 text-smallTag hover:bg-headline hover:bg-opacity-80 hover:text-white flex items-center justify-center gap-2">
+                    Sign Out<LogOut size={20}/></button>
+          <Link href="/#booking" className='button-reversed mt-2 self-center w-1/2 px-4 py-2 flex justify-center items-center'>Book Now</Link>
         </div>
       )}
     </div>

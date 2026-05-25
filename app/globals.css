@@ -34,7 +34,7 @@
   }
 
   .heading {
-    @apply text-headline text-5xl font-bold;
+    @apply text-headline text-5xl font-bold sm:font-semibold;
     font-family: var(--font-figtree);
   }
 
@@ -63,7 +63,7 @@
   }
 
   .button {
-    @apply text-center whitespace-nowrap text-headline font-medium text-base bg-transparent px-5 py-2 shadow-sm  shadow-headline rounded-xl hover:text-white hover:bg-headline
+    @apply text-center whitespace-nowrap text-headline font-medium sm:text-base text-sm bg-transparent px-5 py-2 shadow-sm  shadow-headline rounded-xl hover:text-white hover:bg-headline
   }
 
   .button-reversed {

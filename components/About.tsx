@@ -11,7 +11,7 @@ const About = () => {
   ]
 
   return (
-    <section className="w-screen bg-opacity-30 px-10 sm:px-16 py-10 gap-6 sm:py-20"
+    <section id="about" className="w-screen bg-opacity-30 px-10 sm:px-16 py-10 gap-6 sm:py-20"
       style={{ background: 'linear-gradient(to bottom, transparent 0%, #5750A920 20%, #5750A960 70%, #5750A9 90%, #5750A960 100%)' }}
     >
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#FBF8FF4D] to-transparent pointer-events-none" />
@@ -33,22 +33,22 @@ const About = () => {
           <span className="inline-block text-xs tracking-widest uppercase bg-white/35 text-smallTag font-normal px-3 py-1 rounded-full mb-6">
             About us
           </span>
-          <h2 className="text-3xl font-semibold heading leading-snug mb-4">
+          <h1 className="text-3xl font-semibold heading leading-snug mb-4">
             A clinic built on<br />love for animals
-          </h2>
+          </h1>
           <p className="content_text leading-relaxed mb-6">
             Founded in 2015, PawClinic has been a go-to veterinary care center
             in Saigon for over 2,000 families. Our team of licensed vets and
             groomers treat every animal like their own.
           </p>
 
-        <div className="grid grid-cols-2">
-          <Link href="/#team"><button className="inline-flex items-center gap-2 button-reversed duration-200 text-white text-sm font-medium px-5 py-2.5 rounded-full">
+        <div className="sm:w-3/4 sm:gap-4 grid grid-cols-2 ">
+          <Link href="/#team"><button className="inline-flex items-center  button-reversed duration-200 text-white text-sm font-medium px-5 py-2.5 rounded-full">
             Our Medical Team →
           </button>
           </Link>
 
-          <Link href="/#facilities"><button className="inline-flex items-center gap-2 button-reversed duration-200 text-white text-sm font-medium px-5 py-2.5 rounded-full">
+          <Link href="/#facilities"><button className="inline-flex items-center  button-reversed duration-200 text-white text-sm font-medium px-5 py-2.5 rounded-full">
             Our Facilities →
           </button>
           </Link>

@@ -53,7 +53,7 @@ const Team = () => {
               <h1 className="heading">Meet Our Team</h1>
           </div>
 
-          <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-14">
+          <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-8 ">
               {team.map((team) => (
                 <div className="team-card flex flex-row items-stretch"
                       key={team.name}>
@@ -64,7 +64,7 @@ const Team = () => {
                                           className="object-cover object-center"/>
                                 </div>
                   
-                                <div className="flex flex-col justify-between gap-4">
+                                <div className="flex flex-col justify-between gap-4 flex-1">
                                   <h2 className="text-2xl text-headline font-semibold">{team.name}</h2>
                                   <div className="h-px bg-text/50"></div>
                                   <p className="text-text text-sm">{team.description}</p>
