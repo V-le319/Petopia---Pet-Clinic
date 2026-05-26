@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import React from 'react'
 import { useState } from 'react';
 import { motion } from 'framer-motion'
+import FadeIn from './FadeIn';
 
 
 const Facilities = () => {
@@ -50,6 +51,7 @@ const Facilities = () => {
   return (
     <>
     <section id="facilities" className="w-full h-full bg-mainBG/30 mb-8 px-10 py-10 gap-6 sm:py-20 ">
+      <FadeIn className="w-full">
       <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-8">
         
         <div className="mb-8">
@@ -63,14 +65,14 @@ const Facilities = () => {
         <div className="w-full grid grid-cols-3 grid-rows-[200px_200px_250px] gap-8 sm:gap-12">
             {facilities.map((facility, index) => (
                 <motion.div
-    key={facility.title}
-    className={`${facility.span} relative overflow-hidden rounded-2xl cursor-pointer group`}
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    viewport={{ once: false }}
-    onClick={() => setSelectedIndex(index)}
-  >
+                    key={facility.title}
+                    className={`${facility.span} relative overflow-hidden rounded-2xl cursor-pointer group`}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: false }}
+                    onClick={() => setSelectedIndex(index)}
+                 >
                 {/* <div className={`${facility.span} relative overflow-hidden rounded-2xl cursor-pointer group`} key={facility.title}
                         onClick={() => setSelectedIndex(index)}> */}
                     <img src={facility.image}
@@ -89,23 +91,26 @@ const Facilities = () => {
            {/*light box */}
         <div> 
             {selectedIndex !== null && (
-  <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
-       onClick={() => setSelectedIndex(null)}>
-    <button className="absolute top-6 right-6 text-white" onClick={() => setSelectedIndex(null)}>
-      <X size={32} />
-    </button>
-    <button className="absolute left-6 text-white" onClick={(e) => { e.stopPropagation(); handlePrev() }}>
-      <ChevronLeft size={48} />
-    </button>
-    <button className="absolute right-6 text-white" onClick={(e) => { e.stopPropagation(); handleNext() }}>
-      <ChevronRight size={48} />
-    </button>
-    <img src={facilities[selectedIndex].image} className="max-w-[90%] max-h-[90vh] object-contain rounded-xl" />
-  </div>
-)}
+                <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center"
+                    onClick={() => setSelectedIndex(null)}>
+                    <button className="absolute top-6 right-6 text-white" onClick={() => setSelectedIndex(null)}>
+                    <X size={32} />
+                    </button>
+                    
+                    <button className="absolute left-6 text-white" onClick={(e) => { e.stopPropagation(); handlePrev() }}>
+                    <ChevronLeft size={48} />
+                    </button>
+                    
+                    <button className="absolute right-6 text-white" onClick={(e) => { e.stopPropagation(); handleNext() }}>
+                    <ChevronRight size={48} />
+                    </button>
+                    <img src={facilities[selectedIndex].image} className="max-w-[90%] max-h-[90vh] object-contain rounded-xl" />
+                </div>
+            )}
         </div>
 
     </div>
+    </FadeIn>
     </section>
     </>
   )

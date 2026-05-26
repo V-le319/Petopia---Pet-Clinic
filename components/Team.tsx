@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import FadeIn from './FadeIn'
 
 const Team = () => {
   const team = [
@@ -48,11 +49,15 @@ const Team = () => {
               className=" h-auto px-10 sm:px-16 py-10 gap-6 sm:py-20"
               style={{ background: 'linear-gradient(to top, transparent 0%, #5750A920 15%, #5750A960 100%, #5750A9 100%)' }}>
         
+        
         <div className="max-w-6xl mx-auto flex flex-col  gap-8">
+          <FadeIn  delay={0}>
           <div className="w-full sm:w-1/2 mb-8 flex flex-row justify-start items-start gap-4">
               <h1 className="heading">Meet Our Team</h1>
           </div>
-
+          </FadeIn>
+          
+          <FadeIn delay={0.2}>
           <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-8 ">
               {team.map((team) => (
                 <div className="team-card flex flex-row items-stretch"
@@ -73,7 +78,10 @@ const Team = () => {
                 </div>
               ))}
           </div>
+          </FadeIn>
         </div>
+
+        
     </section>
     </>
   )

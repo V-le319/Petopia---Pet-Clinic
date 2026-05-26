@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import FadeIn from './FadeIn'
 
 const About = () => {
   const stats = [
@@ -14,6 +15,8 @@ const About = () => {
     <section id="about" className="w-screen bg-opacity-30 px-10 sm:px-16 py-10 gap-6 sm:py-20"
       style={{ background: 'linear-gradient(to bottom, transparent 0%, #5750A920 20%, #5750A960 70%, #5750A9 90%, #5750A960 100%)' }}
     >
+
+      <FadeIn className="w-full">
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#FBF8FF4D] to-transparent pointer-events-none" />
       {/* Top: image + content */}
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center gap-11 sm:gap-16 mb-12">
@@ -71,6 +74,8 @@ const About = () => {
           </React.Fragment>
         ))}
       </div>
+
+      </FadeIn>
     </section>
   )
 }

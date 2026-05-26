@@ -1,4 +1,5 @@
 import React from 'react'
+import FadeIn from './FadeIn'
 
 const FindUs = () => {
   const contactCard = [
@@ -26,6 +27,7 @@ const FindUs = () => {
   return (
     <>
     <section id="contact" className="w-screen bg-mainBg/40 gap-6 sm:pt-10">
+      <FadeIn className="w-full">
       <div className="flex flex-col items-center justify-center">
       
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-4 text-center px-10 sm:px-16 py-10  mb-4">
@@ -62,6 +64,8 @@ const FindUs = () => {
       </div>
       
       </div>
+
+      </FadeIn>
     </section>
     </>
   )

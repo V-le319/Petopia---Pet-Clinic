@@ -3,6 +3,7 @@ import React from 'react'
 import DatePicker from './DatePicker'
 import TimeSlot from './TimeSlot'
 import { toast } from 'sonner'
+import FadeIn from './FadeIn'
 
 const BookingForm = () => {
     const [date, setDate] = React.useState<Date | undefined>(undefined)
@@ -25,16 +26,20 @@ const BookingForm = () => {
   return (
     <>
     <section id="booking">
+      
       <div className="w-full h-full bg-mainBG/30 mb-8 px-10 sm:px-16 py-10 gap-6 sm:py-20 ">
         <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-8">
             
+            <FadeIn delay={0} >
               <div className='text-center'>
                 <span className="inline-block text-xs tracking-widest uppercase bg-tagHover/60 text-smallTag font-normal px-3 py-1 rounded-full mb-4">
             easy online booking
-          </span>
+                </span>
                 <h1 className="heading mb-4 sm:mb-8">Booking an Appointment</h1>
               </div>
+            </FadeIn>
 
+            <FadeIn delay={0.2} className="w-full">
               <form className="form"
                     onSubmit={handleSubmit}>
                 <div className="info w-full grid grid-cols-1 sm:px-10 sm:gap-10 sm:grid-cols-2 gap-6">
@@ -92,8 +97,11 @@ const BookingForm = () => {
                 <button className="button-reversed w-full py-2 sm:mt-6 sm:py-4 sm:w-1/2"
                         type="submit">Confirm Booking 🐾</button>
               </form>
+              </FadeIn>
         </div>
       </div>
+
+     
     </section>
     </>
   )
