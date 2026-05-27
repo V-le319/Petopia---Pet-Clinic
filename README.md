@@ -1,6 +1,7 @@
 Petopia Pet Clinic 🐾
 
 A full-stack pet clinic booking platform built with Next.js 15, TypeScript, and Supabase — designed for small veterinary practices to manage appointments online. Pet owners can book services, receive email confirmations, and clinic staff can manage bookings through a protected admin dashboard.
+
 Live: petopia-bice.vercel.app
 Repo: github.com/V-le319/Petopia---Pet-Clinic
 
