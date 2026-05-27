@@ -45,58 +45,12 @@ A full-stack pet clinic booking platform built with Next.js 15, TypeScript, and 
 - A [Resend](https://resend.com) account and API key
 ### Installation
  
-```bash
-git clone https://github.com/V-le319/Petopia---Pet-Clinic.git
-cd Petopia---Pet-Clinic
-npm install
-```
- 
-### Environment Variables
- 
-Create a `.env.local` file in the root:
- 
-```env
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your_secret_here
- 
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
- 
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
- 
-RESEND_API_KEY=your_resend_api_key
-```
- 
-### Run Locally
- 
-```bash
-npm run dev
-```
- 
----
- 
 ## Admin Access
  
 Dashboard access is restricted to whitelisted emails defined in `lib/config.ts`. Route protection is handled by `middleware.ts` — any non-whitelisted user attempting to visit `/dashboard` is redirected to the homepage.
  
 The navbar Dashboard link only renders when the logged-in user is a whitelisted admin.
  
----
- 
-## Deployment (Vercel)
- 
-1. Push to GitHub and import the repo in Vercel
-2. Add all environment variables from `.env.local` to Vercel project settings under Production
-3. Update your Google OAuth app's **Authorized redirect URI** to:
-   ```
-   https://your-app.vercel.app/api/auth/callback/google
-   ```
-4. Update **Authorized JavaScript origins** to:
-   ```
-   https://your-app.vercel.app
-   ```
-5. Redeploy after adding environment variables
 ---
  
 ## Project Structure
