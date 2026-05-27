@@ -1,109 +1,93 @@
-# YC Directory 🚀
+Petopia Pet Clinic 🐾
 
-A full-stack startup pitch platform built with Next.js 15, React 19, and Sanity CMS — inspired by Y Combinator's startup directory. Entrepreneurs can submit startup ideas, browse pitches, and vote on projects.
+A full-stack pet clinic booking platform built with Next.js 15, TypeScript, and Supabase — designed for small veterinary practices to manage appointments online. Pet owners can book services, receive email confirmations, and clinic staff can manage bookings through a protected admin dashboard.
+Live: petopia-bice.vercel.app
+Repo: github.com/V-le319/Petopia---Pet-Clinic
 
-**Live:** [production-ready-full-stack-app.vercel.app](https://production-ready-full-stack-app.vercel.app)  
-**Repo:** [github.com/V-le319/Production-Ready-Full-Stack-App](https://github.com/V-le319/Production-Ready-Full-Stack-App)
+Features
 
----
+Google OAuth authentication via NextAuth.js
+Online booking form with date picker and dynamic time slot selection
+Booking confirmation emails sent via Resend
+Bookings stored in Supabase database with full record keeping
+Protected admin dashboard — whitelist-based access via middleware
+Staff login with account switcher prompt for clean UX
+Scroll-aware navbar with blur effect
+Responsive design across mobile and desktop
+Fully deployed on Vercel
 
-## Features
 
-- GitHub OAuth authentication via Auth.js v5
-- Submit startup pitches with title, description, category, image, and markdown pitch content
-- Browse and search all submitted startups
-- View individual startup pages with live view counters
-- Author profile pages
-- Sanity Studio CMS at `/studio` for content management
-- Error monitoring via Sentry
-- Fully deployed on Vercel
+Tech Stack
+LayerTechnologyFrameworkNext.js 15 (App Router)LanguageTypeScriptStylingTailwind CSSDatabaseSupabase (PostgreSQL)AuthNextAuth.js v4 with Google providerEmailResendUI Componentsshadcn/ui, Lucide IconsDeploymentVercel
 
----
+Getting Started
+Prerequisites
 
-## Tech Stack
+Node.js 18+
+A Supabase account and project
+A Google Cloud OAuth 2.0 app
+A Resend account and API key
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 15 (App Router) |
-| Language | TypeScript |
-| Styling | Tailwind CSS v3 + shadcn/ui |
-| CMS | Sanity v5 |
-| Auth | Auth.js v5 (NextAuth) with GitHub provider |
-| Markdown | EasyMDE + markdown-it |
-| Monitoring | Sentry |
-| Deployment | Vercel |
+Installation
+bashgit clone https://github.com/V-le319/Petopia---Pet-Clinic.git
+cd Petopia---Pet-Clinic
+npm install
+Environment Variables
+Create a .env.local file in the root:
+envNEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_secret_here
 
----
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 
-## Getting Started
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-### Prerequisites
+RESEND_API_KEY=your_resend_api_key
+Run Locally
+bashnpm run dev
 
-- Node.js 20
-- A [Sanity](https://sanity.io) account and project
-- A GitHub OAuth app
+Admin Access
+Dashboard access is restricted to whitelisted emails defined in lib/config.ts. Route protection is handled by middleware.ts — any non-whitelisted user attempting to visit /dashboard is redirected to the homepage.
+The navbar Dashboard link only renders when the logged-in user is a whitelisted admin.
 
-## Deployment (Vercel)
+Deployment (Vercel)
 
-1. Push to GitHub and import the repo in Vercel
-2. Add all environment variables from `.env.local` to Vercel project settings
-3. Update GitHub OAuth app's **Authorization callback URL** to:
-   ```
- https://production-ready-full-stack-app.vercel.app
-   ```
-4. Add  Vercel domain to Sanity's **CORS origins** at sanity.io → your project → API → CORS Origins
+Push to GitHub and import the repo in Vercel
+Add all environment variables from .env.local to Vercel project settings under Production
+Update your Google OAuth app's Authorized redirect URI to:
 
----
+   https://your-app.vercel.app/api/auth/callback/google
 
-## Deployment Notes
+Update Authorized JavaScript origins to:
 
-Several compatibility issues were resolved to build successfully with Next.js 15 + React 19 stable.
+   https://your-app.vercel.app
 
-**1. Removed `'use client'` from `sanity.config.ts`**  
-The auto-generated sanity config had a `'use client'` directive that caused webpack to bundle sanity for the browser, triggering `useEffectEvent` errors since it's not exposed in React 19 stable.
+Redeploy after adding environment variables
 
-**2. Upgraded `sanity` from 5.15.0 to 5.25.1**  
-The older version had React 19 incompatibilities in its internal chunks (`structureTool.js`).
 
-**3. Dynamic import in `/app/studio/[[...tool]]/page.tsx`**  
-Replaced static imports with dynamic `await import()` to prevent webpack from bundling the Sanity Studio at build time, resolving `createContext is not a function` errors.
-
-**4. Replaced `sanityFetch` / `SanityLive` with `client.fetch`**  
-`defineLive` from `next-sanity@11.6.13` is incompatible with Next.js 15 + React 19. Replaced with standard `client.fetch`. Content still refreshes on navigation via Next.js cache revalidation.
-
-**5. GitHub OAuth callback URL**  
-Updated the Authorization callback URL in GitHub OAuth app settings to the production Vercel domain.
-
----
-
-## Project Structure
-
-```
+Project Structure
+petopia/
 ├── app/
-│   ├── (ROOT)/          # Main app routes
-│   │   ├── page.tsx     # Homepage - startup listings
-│   │   ├── startup/     # Individual startup pages
-│   │   └── user/        # Author profile pages
-│   ├── studio/          # Sanity Studio route
-│   └── global-error.tsx
-├── components/          # Reusable UI components
-├── sanity/
-│   ├── lib/             # Sanity client, queries, live
-│   ├── schemaTypes/     # Content schemas
-│   └── structure/       # Studio structure
+│   ├── api/
+│   │   ├── auth/[...nextauth]/   # NextAuth route handler
+│   │   └── send-email/           # Resend email API route
+│   ├── dashboard/
+│   │   ├── patient/              # Patient records view
+│   │   ├── schedule/             # Schedule management
+│   │   ├── layout.tsx            # Dashboard layout with sidebar
+│   │   └── page.tsx              # Dashboard home
+│   └── page.tsx                  # Public landing page
+├── components/
+│   ├── BookingForm.tsx           # Booking form with Supabase insert
+│   ├── DatePicker.tsx            # Date selection component
+│   ├── TimeSlot.tsx              # Dynamic time slot availability
+│   ├── Navbar.tsx                # Scroll-aware navbar with auth state
+│   └── FadeIn.tsx                # Scroll animation wrapper
 ├── lib/
-│   └── action.ts        # Server actions (form submission)
-└── sanity.config.ts     # Sanity Studio config
-```
-
----
-
-## Known Limitations
-
-- Real-time live content updates (`SanityLive`) disabled due to `next-sanity@11` incompatibility with Next.js 15 + React 19. Will be re-enabled when upgrading to Next.js 16 + `next-sanity@12`.
-
----
-
-## Credits
-
-Built following the [JS Mastery Next.js 15 course](https://www.youtube.com/@javascriptmastery), with additional debugging and production fixes applied independently.
+│   ├── auth.ts                   # NextAuth config
+│   ├── config.ts                 # Shared whitelist config
+│   └── supabase.ts               # Supabase client
+├── middleware.ts                 # Dashboard route protection
+└── public/
+    └── images/
