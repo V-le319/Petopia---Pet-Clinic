@@ -82,7 +82,7 @@ useEffect(() => {
             <button onClick={() => signOut()}><LogOut size={20}/></button>
           </div>
         ) : (
-          <Link href="/api/auth/signin" className='hidden sm:block button'>Staff Login</Link>
+          <Link href="/api/auth/signin" className='hidden sm:block button'>Sign In</Link>
         )}
 
         <button className="sm:hidden self-center" onClick={() => setIsOpen(!isOpen)}>
