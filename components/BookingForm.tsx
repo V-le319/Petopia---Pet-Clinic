@@ -84,7 +84,7 @@ const BookingForm = () => {
                 <span className="inline-block text-xs tracking-widest uppercase bg-tagHover/60 text-smallTag font-normal px-3 py-1 rounded-full mb-4">
             easy online booking
                 </span>
-                <h1 className="heading mb-4 sm:mb-8">Booking an Appointment</h1>
+                <h1 className="heading sm:text-5xl mb-4 sm:mb-8">Booking an Appointment</h1>
               </div>
             </FadeIn>
 

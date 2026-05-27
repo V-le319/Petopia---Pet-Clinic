@@ -52,13 +52,13 @@ const Team = () => {
         
         <div className="max-w-6xl mx-auto flex flex-col  gap-8">
           <FadeIn  delay={0}>
-          <div className="w-full sm:w-1/2 mb-8 flex flex-row justify-start items-start gap-4">
-              <h1 className="heading">Meet Our Team</h1>
+          <div className="w-full sm:w-1/2 mb-4 flex flex-row justify-start items-start gap-4">
+              <h1 className="heading sm:text-5xl">Meet Our Team</h1>
           </div>
           </FadeIn>
           
           <FadeIn delay={0.2}>
-          <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-8 ">
+          <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-6 ">
               {team.map((team) => (
                 <div className="team-card flex flex-row items-stretch"
                       key={team.name}>
@@ -70,7 +70,7 @@ const Team = () => {
                                 </div>
                   
                                 <div className="flex flex-col justify-between gap-4 flex-1">
-                                  <h2 className="text-2xl text-headline font-semibold">{team.name}</h2>
+                                  <h2 className="sm:text-2xl text-xl text-headline font-semibold">{team.name}</h2>
                                   <div className="h-px bg-text/50"></div>
                                   <p className="text-text text-sm">{team.description}</p>
                                 </div>

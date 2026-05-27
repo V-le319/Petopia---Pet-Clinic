@@ -34,7 +34,7 @@
   }
 
   .heading {
-    @apply text-headline text-5xl font-bold sm:font-semibold;
+    @apply text-headline text-4xl font-bold sm:font-semibold;
     font-family: var(--font-figtree);
   }
 
@@ -44,7 +44,7 @@
   }
 
   .subheading-reversed {
-    @apply text-mainBG/80 text-3xl font-bold;
+    @apply text-mainBG/80 text-2xl font-bold;
     font-family: var(--font-figtree);
   }
 
@@ -106,7 +106,7 @@
 }
 
 .form {
-  @apply w-full h-full p-10 flex flex-col rounded-2xl gap-8 justify-center items-center bg-headline/40
+  @apply w-full h-full px-6 sm:px-10 sm:py-14 py-10 flex flex-col rounded-2xl gap-8 justify-center items-center bg-headline/40
 }
 
 .form-input {

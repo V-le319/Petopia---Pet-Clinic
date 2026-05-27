@@ -50,19 +50,19 @@ const Facilities = () => {
     
   return (
     <>
-    <section id="facilities" className="w-full h-full bg-mainBG/30 mb-8 px-10 py-10 gap-6 sm:py-20 ">
+    <section id="facilities" className="w-full h-full bg-mainBG/30 mb-8 px-10 py-10 gap-6 sm:py-16 ">
       <FadeIn className="w-full">
-      <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-8">
+      <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-6">
         
-        <div className="mb-8">
+        <div className="mb-4">
             <span className="inline-block text-xs tracking-widest uppercase bg-tagHover text-smallTag font-normal px-3 py-1 rounded-full mb-4">
             Our Facilities
             </span>
-            <h1 className="heading mb-4 leading-snug">A space built for care</h1>
+            <h1 className="heading sm:text-5xl mb-4 leading-snug">A space built for care</h1>
             <p className="sm:w-2/3 content_text">Every corner of our clinic is designed with your pet's comfort in mind — clean, calm, and fully equipped for everything from routine visits to complex procedures.</p>
         </div>
 
-        <div className="w-full grid grid-cols-3 grid-rows-[200px_200px_250px] gap-8 sm:gap-12">
+        <div className="w-full grid grid-cols-3 grid-rows-[200px_200px_250px] gap-4 sm:gap-10">
             {facilities.map((facility, index) => (
                 <motion.div
                     key={facility.title}
