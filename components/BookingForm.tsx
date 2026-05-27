@@ -20,6 +20,11 @@ const BookingForm = () => {
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
 
+      if (!session) {
+    toast.error('Please sign in first so we can send your booking confirmation.', { duration: 4000 })
+    return
+  }
+
       if(!date || !time) {
         toast.error ('Please select a date and time slot.', 
                       {duration: 3000}
