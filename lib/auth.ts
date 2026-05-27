@@ -1,10 +1,6 @@
 import { NextAuthOptions, User } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 
-const allowedEmails = [
-  'vincy.lenguyen@gmail.com',  // replace with your actual email
-  'vincykat@gmail.com', //staff email for login dashboard
-]
 
 export const authConfig: NextAuthOptions = {
   providers: [
@@ -19,8 +15,11 @@ export const authConfig: NextAuthOptions = {
     })
   ],
   callbacks: {
-    async signIn({ user }: { user: User }) {
-      return allowedEmails.includes(user.email ?? '')
-    }
+  async signIn() {
+    return true  // allow everyone to sign in
+  },
+  async session({ session }) {
+    return session  // pass session through
   }
+}
 }

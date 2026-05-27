@@ -46,6 +46,20 @@ const BookingForm = () => {
       return
     }
 
+    // send confirmation email
+  await fetch('/api/send-email', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: session?.user?.email, // ← this is where we tell Resend who to send to
+      name,
+      petName,
+      service,
+      date,
+      timeSlot: time,
+    })
+  })
+
       toast.success ('Booking confirmed!',
                       {duration: 3000}
                     )
