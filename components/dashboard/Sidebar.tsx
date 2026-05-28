@@ -49,13 +49,13 @@ const Sidebar = () => {
 
     <div className="bottombar ">
       <Link href="/dashboard">
-        <span className="bottom-heading links">Dashboard</span>
+        <span className="bottom-heading">Dashboard</span>
         </Link>
         <Link href="/dashboard/appointment">
-        <span className="bottom-heading links">Appointments</span>
+        <span className="bottom-heading">Appointments</span>
         </Link>
         <Link href="/dashboard/schedule">
-        <span className="bottom-heading links">Schedule</span>
+        <span className="bottom-heading">Schedule</span>
         </Link>
     </div>
     </>

@@ -62,10 +62,6 @@
     @apply duration-200 hover:border-b-headline hover:border-b-2;
   }
 
-  .bottom-link_hover {
-    @apply duration-200 border-b-2 border-transparent hover:border-b-headline;
-  }
-
   .button {
     @apply text-center whitespace-nowrap text-headline font-medium sm:text-base text-sm bg-transparent px-5 py-2 shadow-sm  shadow-headline rounded-xl hover:text-white hover:bg-headline
   }
@@ -139,7 +135,7 @@
 }
 
 .bottom-heading {
-  @apply text-white text-base font-medium;
+  @apply text-white text-base font-medium hover:text-highlight ;
   font-family: var(--font-figtree);
 }
 
@@ -150,6 +146,10 @@
 
 .side-hover {
   @apply w-full px-4 py-4 duration-200 hover:bg-lightBg hover:bg-opacity-80
+}
+
+.dashboard-card {
+  @apply bg-white/80 hover:bg-lightBg/40 h-40 p-6 flex flex-col gap-4 border-l-4 justify-center items-center rounded-lg
 }
 
 
