@@ -18,7 +18,9 @@ module.exports = {
           cardBg: "#ECECFF",  
           cardHover: "#FCEFF7",
           darkBg: "#292F4B",
-          darkHover: "#2D3454"
+          darkHover: "#2D3454",
+          lightBg: "#8E9EFE",
+          cardBorder: "#47D7D1",
       },
     },
   },

@@ -62,6 +62,10 @@
     @apply duration-200 hover:border-b-headline hover:border-b-2;
   }
 
+  .bottom-link_hover {
+    @apply duration-200 border-b-2 border-transparent hover:border-b-headline;
+  }
+
   .button {
     @apply text-center whitespace-nowrap text-headline font-medium sm:text-base text-sm bg-transparent px-5 py-2 shadow-sm  shadow-headline rounded-xl hover:text-white hover:bg-headline
   }
@@ -116,6 +120,38 @@
 .input {
   @apply w-full px-2 h-10 rounded-lg bg-white
 }
+
+.sidebar {
+  @apply w-80 py-6 bg-headline text-white hidden sm:flex flex-col gap-4
+}
+
+.topbar {
+  @apply sm:hidden flex justify-between items-center py-10 px-4 w-full h-16 bg-headline text-white fixed top-0 left-0 right-0 z-40
+}
+
+.bottombar {
+  @apply sm:hidden flex justify-center items-center gap-6 p-10 w-full h-16 fixed bottom-0 left-0 right-0 bg-headline z-40
+}
+
+.sidebarLogo {
+    @apply text-2xl font-semibold text-white drop-shadow-sm shadow-headline;
+     font-family: var(--font-figtree);
+}
+
+.bottom-heading {
+  @apply text-white text-base font-medium;
+  font-family: var(--font-figtree);
+}
+
+.sidebar-heading {
+  @apply text-white text-base font-medium;
+  font-family: var(--font-figtree);
+}
+
+.side-hover {
+  @apply w-full px-4 py-4 duration-200 hover:bg-lightBg hover:bg-opacity-80
+}
+
 
 .w-md-editor-toolbar {
   padding: 10px !important;

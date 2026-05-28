@@ -1,8 +1,16 @@
+import Appointment from '@/components/dashboard/Appointment'
+
+
 import React from 'react'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <>
+    <div>
+      <Appointment/>
+      
+    </div>
+    </>
   )
 }
 

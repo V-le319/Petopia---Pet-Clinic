@@ -1,9 +1,12 @@
+import Schedule from '@/components/dashboard/Schedule'
 import React from 'react'
 
-const Schedule = () => {
+const SchedulePage = () => {
   return (
-    <div>Schedule</div>
+    <div>
+        <Schedule/>
+    </div>
   )
 }
 
-export default Schedule
+export default SchedulePage
