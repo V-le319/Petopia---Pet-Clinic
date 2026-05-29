@@ -52,18 +52,12 @@ const Appointment = () => {
           <div key={i} className="flex items-center justify-between py-2 border-b border-text/10 last:border-0">
 
             {/* Left: pet · service, owner · date */}
-            <div className="flex flex-col gap-0.5">
-              <div className="flex items-center gap-2">
-                <span className="font-medium text-text text-sm">{b.pet}</span>
-                <span className="text-text/40 text-sm">·</span>
-                <span className="text-text/70 text-sm">{b.service}</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-xs text-text/50">
-                <span>{b.owner}</span>
-                <span>·</span>
-                <span>{b.date}</span>
-              </div>
-            </div>
+            <div className="grid grid-cols-[1fr_1fr] gap-x-4">
+              <span className="font-medium text-text text-sm uppercase">{b.pet}</span>
+              <span className="text-smallTag text-sm font-medium">{b.service}</span>
+              <span className="text-xs text-text/50">{b.owner}</span>
+              <span className="text-xs text-text/50">{b.date}</span>
+          </div>
 
             {/* Right: status badge */}
             <span className={`text-xs px-3 py-1 rounded-full font-medium shrink-0 ${statusBadge[b.status]}`}>
