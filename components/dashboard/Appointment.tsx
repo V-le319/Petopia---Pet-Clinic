@@ -35,7 +35,7 @@ const Appointment = () => {
     <div className="w-full flex-1 bg-white/80 rounded-md p-4">
 
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between  pb-4 border-b border-text/20">
         <span className="font-medium text-headline">
           {/* "Recent bookings" on mobile, "All Bookings" on tablet/desktop */}
           <span className="sm:hidden">Recent bookings</span>
@@ -47,9 +47,9 @@ const Appointment = () => {
       </div>
 
       {/* ── MOBILE: card list ── */}
-      <div className="flex flex-col gap-3 sm:hidden">
+      <div className="flex flex-col gap- sm:hidden">
         {mockBookings.map((b, i) => (
-          <div key={i} className="flex items-center justify-between py-2 border-b border-text/10 last:border-0">
+          <div key={i} className="flex items-center justify-between py-4 border-b border-text/20 last:border-0">
 
             {/* Left: pet · service, owner · date */}
             <div className="grid grid-cols-[1fr_1fr] gap-x-4">
