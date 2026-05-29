@@ -118,7 +118,7 @@
 }
 
 .sidebar {
-  @apply w-80 py-6 bg-headline text-white hidden sm:flex flex-col gap-4
+  @apply w-72 py-6 bg-headline text-white hidden sm:flex flex-col gap-4
 }
 
 .topbar {
@@ -130,7 +130,7 @@
 }
 
 .sidebarLogo {
-    @apply text-2xl font-semibold text-white drop-shadow-sm shadow-headline;
+    @apply text-2xl sm:text-xl font-semibold text-white drop-shadow-sm shadow-headline;
      font-family: var(--font-figtree);
 }
 

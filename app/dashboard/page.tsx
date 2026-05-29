@@ -1,4 +1,5 @@
 import Appointment from '@/components/dashboard/Appointment'
+import DashboardGreeting from '@/components/dashboard/DashboardGreeting'
 import Schedule from '@/components/dashboard/Schedule'
 
 
@@ -30,10 +31,7 @@ const Dashboard = () => {
     <>
     <div className="w-full min-h-screen flex flex-col gap-6 py-14 pt-20 md:pt-0">
       
-      <div className="w-full h-auto p-4 bg-white/80 rounded-md mt-6">
-        <span className="text-2xl font-medium text-headline">Good Morning</span>
-        <p>Date - Here's today overview</p>
-      </div>
+      <DashboardGreeting/>
 
       <div className="grid grid-cols-3 gap-4">
         {dashboardCard.map((card) => (
@@ -47,7 +45,7 @@ const Dashboard = () => {
         ))}
       </div>
 
-      <div className="w-full h-auto flex gap-4">
+      <div className="w-full h-auto flex flex-col md:flex-row gap-4">
       
         <Appointment/>
         <Schedule/>
