@@ -6,13 +6,15 @@ import { useSession } from 'next-auth/react'
 
 const Sidebar = () => {
   const { data: session} = useSession()
+
   
   return (
     <>
-    <div className="w-screen sidebar">
+    <div className=" sidebar flex flex-col justify-between">
 
+      <div>
         <Link href="/">
-      <div className='flex px-4 items-center gap-2  mb-2'>
+      <div className='flex px-4 items-center gap-2  mb-4'>
         <img src="/images/petopia-logo-Photoroom.png"
               width={40}
               height={60}/>
@@ -26,7 +28,7 @@ const Sidebar = () => {
         <Link href="/dashboard" className="w-full side-hover">
         <span className="sidebar-heading pl-2">Dashboard</span>
         </Link>
-        <Link href="/dashboard/appointment" className="w-full side-hover">
+        <Link href="/dashboard/appointments" className="w-full side-hover">
         <span className="sidebar-heading pl-2">Appointments</span>
         </Link>
         <Link href="/dashboard/schedule" className="w-full side-hover">
@@ -34,6 +36,25 @@ const Sidebar = () => {
         </Link>
       </div>
 
+      </div>
+
+      <div className="">
+        <div className="h-px w-full bg-white/40"></div>
+        <div className='h-14 flex px-4 items-center gap-2 mt-4' >
+            {session?.user?.image && (
+              <div className="flex items-center gap-2">
+                      <Image
+                        src={session.user.image}
+                        width={36}
+                        height={36}
+                        alt="avatar"
+                        className="rounded-full"
+                      />
+                      <span>{session.user?.name}</span>
+                 </div>     
+                    )}
+        </div>
+      </div>
     </div>
 
     <div className="topbar">
@@ -65,7 +86,7 @@ const Sidebar = () => {
       <Link href="/dashboard">
         <span className="bottom-heading">Dashboard</span>
         </Link>
-        <Link href="/dashboard/appointment">
+        <Link href="/dashboard/appointments">
         <span className="bottom-heading">Appointments</span>
         </Link>
         <Link href="/dashboard/schedule">
