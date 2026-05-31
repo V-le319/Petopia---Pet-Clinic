@@ -33,7 +33,7 @@ interface Booking {
 
 const Schedule = () => {
   return (
-    <div className="w-full flex-1 bg-white/80 rounded-md p-4">
+    <div className="w-full flex-1 bg-white/80 rounded-xl p-4">
       
       {/* Header */}
       <div className="flex items-center justify-between mb-4 pb-4 border-b border-text/20">

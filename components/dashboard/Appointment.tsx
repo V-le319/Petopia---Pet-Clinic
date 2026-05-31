@@ -4,7 +4,7 @@ import { mockBookings, petTypeBadge, statusBadge, type Booking } from '@/lib/moc
 
 const Appointment = () => {
   return (
-    <div className="w-full flex-1 bg-white/80 rounded-md p-4">
+    <div className="w-full flex-1 bg-white/80 rounded-xl p-4">
 
       {/* Header */}
       <div className="flex items-center justify-between pb-4 border-b border-text/20">
@@ -13,7 +13,7 @@ const Appointment = () => {
           <span className="sm:hidden">Recent bookings</span>
           <span className="hidden sm:inline">All Bookings</span>
         </span>
-        <Link href="/dashboard/bookings" className="text-sm text-headline hover:text-highlight">
+        <Link href="/dashboard/appointments" className="text-sm text-headline hover:text-highlight">
           View all →
         </Link>
       </div>
@@ -24,7 +24,7 @@ const Appointment = () => {
           <div key={i} className="flex items-center justify-between py-4 border-b border-text/20 last:border-0">
 
             {/* Left: pet · service, owner · date */}
-            <div className="grid grid-cols-[1fr_1fr] gap-x-4">
+            <div className="grid grid-cols-[120px_160px] gap-x-2 ">
               <span className="font-medium text-text text-sm uppercase">{b.pet}</span>
               <span className="text-smallTag text-sm font-medium">{b.service}</span>
               <span className="text-xs text-text/50">{b.owner}</span>

@@ -32,7 +32,7 @@ const Dashboard = () => {
   ]
   return (
     <>
-    <div className="w-full min-h-screen flex flex-col gap-8 py-14 pt-14 md:pt-0">
+    <div className="w-full min-h-screen flex flex-col gap-8 py-14 pt-14 pb-24 md:pt-0">
       
       <DashboardGreeting/>
 
