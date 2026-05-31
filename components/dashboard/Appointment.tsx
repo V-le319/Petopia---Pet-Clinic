@@ -24,7 +24,7 @@ const Appointment = () => {
           <div key={i} className="flex items-center justify-between py-4 border-b border-text/20 last:border-0">
 
             {/* Left: pet · service, owner · date */}
-            <div className="grid grid-cols-[120px_160px] gap-x-2 ">
+            <div className="grid grid-cols-[100px_1fr] gap-x-2 ">
               <span className="font-medium text-text text-sm uppercase">{b.pet}</span>
               <span className="text-smallTag text-sm font-medium">{b.service}</span>
               <span className="text-xs text-text/50">{b.owner}</span>
