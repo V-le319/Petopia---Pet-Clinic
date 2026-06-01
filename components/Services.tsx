@@ -63,7 +63,7 @@ const Services = () => {
       </FadeIn>
 
       <FadeIn delay={0.2}>
-      <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-10">
+      <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-10">
         {services.map((service) => (
           <div className="grid-card "
                 key={service.title}>

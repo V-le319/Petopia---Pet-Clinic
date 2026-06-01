@@ -41,7 +41,7 @@ const Schedule = () => {
           {/* "Recent bookings" on mobile, "All Bookings" on tablet/desktop */}
           <span className="text-headline font-medium">Today's schedule</span>
         </span>
-        <Link href="/dashboard/bookings" className="text-sm text-headline hover:text-highlight">
+        <Link href="/dashboard/schedule" className="text-sm text-headline hover:text-highlight">
           View all →
         </Link>
       </div>

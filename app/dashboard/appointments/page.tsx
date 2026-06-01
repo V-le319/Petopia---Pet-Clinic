@@ -3,13 +3,14 @@ import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Sidebar from '@/components/dashboard/Sidebar'
 import { mockBookings, petTypeBadge, statusBadge, type Booking } from '@/lib/mockData'
+import Link from 'next/link'
 
 
 const Appointments = () => {
     const { data : session } = useSession()
   return (
     <>
-    <div className="w-full min-h-screen flex flex-col  bg-lightLavender gap-8 py-4 pt-14 md:pt-0 pb-24">
+    <div className="w-full min-h-screen flex flex-col  bg-lightLavender gap-8 py-4  pt-14 md:pt-0 pb-24">
       <div className="w-full h-auto p-4 px-8 sm:px-10 bg-white/80 mt-6 flex justify-between">
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl font-medium text-headline">Appointments</h1>
@@ -30,13 +31,14 @@ const Appointments = () => {
 
       <div className="w-full h-auto px-8 flex flex-col gap-8">
 
-          <div className="flex flex-col items-center sm:flex-row gap-4 w-full">
+          <div className="flex flex-col justify-center items-center sm:flex-row gap-4 w-full">
             <input className="sm:w-1/2 w-full bg-white/80 text-base text-text rounded-xl px-6 py-2 border-none"
                   placeholder="Search by name, pet, service ..."/>
-            <div className="flex gap-4">
+            <div className=" flex gap-2 sm:gap-4">
               <button className="dashboard-btn">All</button>
               <button className="dashboard-btn">Confirmed</button>
               <button className="dashboard-btn">Pending</button>
+              <button className="dashboard-btn">Done</button>
             </div>
           </div>
 
@@ -61,10 +63,21 @@ const Appointments = () => {
 
           </div>
         ))}
+        <div className="flex gap-6 justify-end items-center w-full">
+        <span className="text-text/70 text-sm">Showing 1-5 of 27</span>
+        <div className="text-text/70 text-sm flex gap-1">
+          <Link href=""><button className="page-btn">1</button></Link>
+          <Link href=""><button className="page-btn">2</button></Link>
+          <Link href=""><button className="page-btn">3</button></Link>
+        </div>
       </div>
+
+      </div>
+      
 
                  {/* ── TABLET + DESKTOP: table ── */}
           <div className="hidden sm:block w-full bg-white/80 rounded-xl">
+
             <div className="w-full p-4 flex justify-between">
             <span className="text-headline text-xl font-medium self-center">All bookings</span>
             <span className="text-smallTag bg-tagHover py-1 px-4 rounded-full">Total</span>
@@ -105,6 +118,15 @@ const Appointments = () => {
           ))}
         </tbody>
       </table>
+
+      <div className="flex gap-8 justify-end items-center w-full p-4">
+        <span className="text-text/70 text-sm">Showing 1-5 of 27</span>
+        <div className="text-text/70 text-sm flex gap-1">
+          <Link href=""><button className="page-btn">1</button></Link>
+          <Link href=""><button className="page-btn">2</button></Link>
+          <Link href=""><button className="page-btn">3</button></Link>
+        </div>
+      </div>
 
   </div>
 
