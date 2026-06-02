@@ -58,7 +58,8 @@ const SchedulePage = () => {
       <div className="schedule w-full h-auto p-4 px-8 bg-white/80 rounded-xl flex flex-col gap-3">
       <span className="text-headline text-xl font-medium border-b pb-4 border-text/20">Today's bookings</span>
           {mockBookings.map((b, i) => (
-            <div className=" flex gap-2 items-center pb-2 border-b border-text/20">
+            <div  key={i}
+                  className=" flex gap-2 items-center pb-2 border-b border-text/20">
               <div className="flex flex-col">
                 <span className="text-text text-sm">{b.date}</span>
                 <span className="text-smallTag font-medium">{b.time}</span>
