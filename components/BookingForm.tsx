@@ -31,6 +31,7 @@ const BookingForm = () => {
                     )
     return
       }
+      const formattedDate = date.toLocaleDateString('en-CA') 
 
       const { error } = await supabase
       .from('Booking')
@@ -39,7 +40,7 @@ const BookingForm = () => {
         pet_name: petName,
         pet_type: petType,
         service,
-        date,
+        date: formattedDate,
         time_slot: time,
         note,
         email: session?.user?.email,
@@ -60,7 +61,7 @@ const BookingForm = () => {
       name,
       petName,
       service,
-      date,
+      date: formattedDate,
       timeSlot: time,
     })
   })

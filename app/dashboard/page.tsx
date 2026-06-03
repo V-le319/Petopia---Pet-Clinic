@@ -1,29 +1,33 @@
 import Appointment from '@/components/dashboard/Appointment'
 import DashboardGreeting from '@/components/dashboard/DashboardGreeting'
 import Schedule from '@/components/dashboard/Schedule'
+import { getBookingCounts } from '@/lib/bookings'
 
 
 import React from 'react'
 
-const Dashboard = () => {
+const Dashboard = async () => {
+
+  const counts = await getBookingCounts()
+
   const dashboardCard = [
     {
       title: "Bookings Today",
-      number: "",
+      number: counts.today,
       condition: "",
       borderColor: "border-l-highlight",
       span: ""
     },
     {
       title: "Total Bookings",
-      number: "",
+      number: counts.total,
       condition: "",
       borderColor: "border-l-lightBg",
       span: ""
     },
     {
       title: "Pending",
-      number: "",
+      number: counts.pending,
       condition: "",
       borderColor: "border-l-[#E8614A]",
       span: "col-span-2"

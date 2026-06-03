@@ -2,12 +2,23 @@
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Sidebar from '@/components/dashboard/Sidebar'
-import { mockBookings, petTypeBadge, statusBadge, type Booking } from '@/lib/mockData'
+import { getAllBookings, petTypeBadge, statusBadge, type Booking } from '@/lib/bookings'
 import Link from 'next/link'
+import { CalendarCheck, CheckCircle } from 'lucide-react'
+import React from 'react'
+import StatusActions from '@/components/dashboard/StatusActions'
+
 
 
 const Appointments = () => {
     const { data : session } = useSession()
+
+    const [bookings, setBookings] = React.useState<Booking[]>([])
+
+React.useEffect(() => {
+  getAllBookings().then(setBookings)
+}, [])
+    
   return (
     <>
     <div className="w-full min-h-screen flex flex-col  bg-lightLavender gap-8 py-4  pt-14 md:pt-0 pb-24">
@@ -44,15 +55,15 @@ const Appointments = () => {
 
               {/* ── MOBILE: card list ── */}
       <div className=" w-full h-auto bg-white/80 flex flex-col gap-2 p-4 rounded-xl sm:hidden">
-                 {mockBookings.map((b, i) => (
+                 {bookings.map((b, i) => (
           <div key={i} className="flex items-start justify-between py-4 border-b border-text/20 last:border-0">
 
             {/* Left: pet · service, owner · date */}
 
              <div className="grid grid-cols-[100px_1fr] gap-x-2 items-start ">
-              <span className="font-medium text-text text-sm uppercase">{b.pet}</span>
+              <span className="font-medium text-text text-sm uppercase">{b.pet_name}</span>
               <span className="text-smallTag text-sm font-medium ">{b.service}</span>
-              <span className="text-xs text-text/50">{b.owner}</span>
+              <span className="text-xs text-text/50">{b.name}</span>
               <span className="text-xs text-text/50">{b.date}</span>
           </div> 
 
@@ -94,15 +105,15 @@ const Appointments = () => {
             <th className="py-2 px-3 font-medium">STATUS</th>
           </tr>
         </thead>
-        <tbody>
-          {mockBookings.map((b, i) => (
+        <tbody className="px-4">
+          {bookings.map((b, i) => (
             <tr key={i} className="border-b border-text/10 last:border-0">
-              <td className="py-4 px-3 text-text font-medium">{b.owner}</td>
+              <td className="py-4 px-3 text-text font-medium">{b.name}</td>
               <td className="py-4 px-3">
                 <span className="inline-flex items-center gap-2">
-                  <span className="text-text">{b.pet}</span>
-                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${petTypeBadge[b.petType]}`}>
-                    {b.petType}
+                  <span className="text-text uppercase">{b.pet_name}</span>
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${petTypeBadge[b.pet_type]}`}>
+                    {b.pet_type}
                   </span>
                 </span>
               </td>
@@ -110,10 +121,13 @@ const Appointments = () => {
               <td className="py-4 px-3 text-text">{b.date}</td>
               <td className="py-4 px-3 text-text">{b.note}</td>
               <td className="py-4 px-3">
-                <span className={`text-xs px-3 py-1 rounded-full font-medium ${statusBadge[b.status]}`}>
-                  {b.status}
-                </span>
-              </td>
+  <div className="flex items-center gap-4">
+    <span className={`text-xs px-3 py-1 rounded-full font-medium ${statusBadge[b.status]}`}>
+      {b.status}
+    </span>
+    <StatusActions id={b.id} status={b.status} />
+  </div>
+</td>
             </tr>
           ))}
         </tbody>
