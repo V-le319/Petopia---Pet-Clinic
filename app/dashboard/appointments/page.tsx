@@ -12,6 +12,7 @@ import StatusActions from '@/components/dashboard/StatusActions'
 
 const Appointments = () => {
     const { data : session } = useSession()
+    
 
     const [bookings, setBookings] = React.useState<Booking[]>([])
 
@@ -68,9 +69,12 @@ React.useEffect(() => {
           </div> 
 
             {/* Right: status badge */}
-            <span className={`text-xs px-3 py-1 rounded-full font-medium shrink-0 ${statusBadge[b.status]}`}>
-              {b.status}
-            </span>
+            <div className="flex items-center gap-4">
+              <span className={`text-xs px-3 py-1 rounded-full font-medium ${statusBadge[b.status]}`}>
+               {b.status}
+              </span>
+            <StatusActions id={b.id} status={b.status} />
+            </div>
 
           </div>
         ))}
@@ -87,17 +91,17 @@ React.useEffect(() => {
       
 
                  {/* ── TABLET + DESKTOP: table ── */}
-          <div className="hidden sm:block w-full bg-white/80 rounded-xl">
+          <div className="hidden sm:block w-full overflow-hidden bg-white/80 rounded-xl">
 
             <div className="w-full p-4 flex justify-between">
             <span className="text-headline text-xl font-medium self-center">All bookings</span>
             <span className="text-smallTag bg-tagHover py-1 px-4 rounded-full">Total</span>
           </div>
 
-          <table className="hidden bg-white/80 p-6 rounded-xl sm:table w-full text-sm border-collapse">
+          <table className="hidden bg-white/80 rounded-xl sm:table w-full text-sm">
         <thead>          
-          <tr className="text-left text-text border-y p-4 border-text/20 bg-lightBg/20">
-            <th className="py-2 px-3 font-medium">OWNER</th>
+          <tr className="text-left text-text border-y p-6 border-text/20 bg-lightBg/20">
+            <th className="py-2 px-3 pl-4 font-medium">OWNER</th>
             <th className="py-2 px-3 font-medium">PET</th>
             <th className="py-2 px-3 font-medium">SERVICE</th>
             <th className="py-2 px-3 font-medium">DATE</th>
@@ -105,10 +109,10 @@ React.useEffect(() => {
             <th className="py-2 px-3 font-medium">STATUS</th>
           </tr>
         </thead>
-        <tbody className="px-4">
+        <tbody className="w-full px-4">
           {bookings.map((b, i) => (
             <tr key={i} className="border-b border-text/10 last:border-0">
-              <td className="py-4 px-3 text-text font-medium">{b.name}</td>
+              <td className="py-4 px-3 text-text pl-4 font-medium">{b.name}</td>
               <td className="py-4 px-3">
                 <span className="inline-flex items-center gap-2">
                   <span className="text-text uppercase">{b.pet_name}</span>
@@ -120,14 +124,15 @@ React.useEffect(() => {
               <td className="py-4 px-3 text-text">{b.service}</td>
               <td className="py-4 px-3 text-text">{b.date}</td>
               <td className="py-4 px-3 text-text">{b.note}</td>
-              <td className="py-4 px-3">
-  <div className="flex items-center gap-4">
-    <span className={`text-xs px-3 py-1 rounded-full font-medium ${statusBadge[b.status]}`}>
-      {b.status}
-    </span>
-    <StatusActions id={b.id} status={b.status} />
-  </div>
-</td>
+
+              <td className="py-4 w-px whitespace-nowrap pr-4">
+                <div className="flex items-center gap-4">
+                  <span className={`text-xs px-3 py-1 rounded-full font-medium ${statusBadge[b.status]}`}>
+                  {b.status}
+                  </span>
+                <StatusActions id={b.id} status={b.status} />
+                </div>
+              </td>
             </tr>
           ))}
         </tbody>

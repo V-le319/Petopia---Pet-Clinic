@@ -12,7 +12,7 @@ const StatusActions = ({ id, status } : { id: string, status: Status }) => {
   }
 
   return (
-    <div className="flex gap-2">
+    <div className="shrink-0 flex gap-2">
       {status !== 'Confirmed' && (
         <button onClick={() => handleUpdate('Confirmed')}
                 className="p-1.5 rounded-full bg-highlight/20 hover:bg-highlight/40">
