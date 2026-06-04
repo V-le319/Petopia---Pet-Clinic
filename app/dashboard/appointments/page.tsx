@@ -7,6 +7,8 @@ import Link from 'next/link'
 import { CalendarCheck, CheckCircle } from 'lucide-react'
 import React from 'react'
 import StatusActions from '@/components/dashboard/StatusActions'
+import { useEffect } from 'react'
+import { supabase } from '@/lib/supabase'
 
 
 
@@ -16,8 +18,18 @@ const Appointments = () => {
 
     const [bookings, setBookings] = React.useState<Booking[]>([])
 
-React.useEffect(() => {
-  getAllBookings().then(setBookings)
+        React.useEffect(() => {
+          getAllBookings().then(setBookings)
+
+          const channel = supabase
+              .channel('bookings')
+              .on('postgres_changes', 
+                { event: 'UPDATE', schema: 'public', table: 'Booking' },
+                   () => { getAllBookings().then(setBookings) }
+                  )
+              .subscribe()
+
+  return () => { supabase.removeChannel(channel) }
 }, [])
     
   return (
@@ -70,9 +82,7 @@ React.useEffect(() => {
 
             {/* Right: status badge */}
             <div className="flex items-center gap-4">
-              <span className={`text-xs px-3 py-1 rounded-full font-medium ${statusBadge[b.status]}`}>
-               {b.status}
-              </span>
+              
             <StatusActions id={b.id} status={b.status} />
             </div>
 
@@ -127,9 +137,7 @@ React.useEffect(() => {
 
               <td className="py-4 w-px whitespace-nowrap pr-4">
                 <div className="flex items-center gap-4">
-                  <span className={`text-xs px-3 py-1 rounded-full font-medium ${statusBadge[b.status]}`}>
-                  {b.status}
-                  </span>
+                  
                 <StatusActions id={b.id} status={b.status} />
                 </div>
               </td>

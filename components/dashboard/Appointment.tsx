@@ -1,9 +1,31 @@
+'use client'
 import Link from "next/link"
+import React from "react"
 import { getAllBookings, petTypeBadge, statusBadge, type Booking } from '@/lib/bookings'
+import { supabase } from "@/lib/supabase"
 
 
-const Appointment = async () => {
-    const bookings = await getAllBookings()
+const Appointment = () => {
+     const [bookings, setBookings] = React.useState<Booking[]>([])
+
+  React.useEffect(() => {
+    getAllBookings().then(setBookings)
+
+    const channel = supabase
+      .channel('bookings')
+      .on('postgres_changes',
+  { event: 'UPDATE', schema: 'public', table: 'Booking' },
+  () => { 
+    console.log('realtime fired')
+    getAllBookings().then(setBookings) 
+  }
+)
+     .subscribe((status) => {
+    console.log('channel status:', status)
+  })
+
+    return () => { supabase.removeChannel(channel) }
+  }, [])
     
   return (
     <div className="w-full flex-1 bg-white/80 rounded-xl p-4">
