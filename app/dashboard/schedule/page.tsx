@@ -42,17 +42,20 @@ const SchedulePage = () => {
 
       <div className="w-full grid grid-cols-3 gap-4">
         <div className="schedule-card ">
-          <span className="text-headline text-2xl sm:text-3xl font-medium">4</span>
-          <span className="text-text text-sm font-medium sm:text-base">Total</span>
+          <span className="text-orange-500 text-2xl sm:text-3xl font-medium">2</span>
+          <span className="text-text text-sm font-medium sm:text-base">Pending</span>
         </div>
+
         <div className="schedule-card ">
           <span className="text-highlight text-2xl sm:text-3xl font-medium">2</span>
           <span className="text-text text-sm font-medium sm:text-base">Confirmed</span>
         </div>
+
         <div className="schedule-card ">
-          <span className="text-orange-500 text-2xl sm:text-3xl font-medium">2</span>
-          <span className="text-text text-sm font-medium sm:text-base">Pending</span>
+          <span className="text-headline text-2xl sm:text-3xl font-medium">4</span>
+          <span className="text-text text-sm font-medium sm:text-base">Done</span>
         </div>
+        
       </div>
 
       <div className="schedule w-full h-auto p-4 px-8 bg-white/80 rounded-xl flex flex-col gap-3">

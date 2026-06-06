@@ -7,16 +7,22 @@ import Link from 'next/link'
 import { CalendarCheck, CheckCircle } from 'lucide-react'
 import React from 'react'
 import StatusActions from '@/components/dashboard/StatusActions'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 
 
 
 const Appointments = () => {
     const { data : session } = useSession()
-    
 
     const [bookings, setBookings] = React.useState<Booking[]>([])
+
+    const [filter, setFilter] = React.useState<'All' | Status>('All')
+    const [search, setSearch] = useState('')
+
+    const filtered = bookings.filter(b => {
+      
+    })
 
         React.useEffect(() => {
           getAllBookings().then(setBookings)

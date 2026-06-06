@@ -117,9 +117,9 @@ const BookingForm = () => {
                             value={petType} 
                             onChange={(e) => setPetType(e.target.value)}>
                       <option className="content_text text-opacity-60">--Select--</option>
-                      <option value="dog">Dog</option>
-                      <option value="cat">Cat</option>
-                      <option value="other">Other</option>
+                      <option value="Dog">Dog</option>
+                      <option value="Cat">Cat</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
 
