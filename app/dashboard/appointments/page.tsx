@@ -21,8 +21,15 @@ const Appointments = () => {
     const [search, setSearch] = useState('')
 
     const filtered = bookings.filter(b => {
-      
+        const matchesFilter = filter === 'All' || b.status === filter
+        const matchesSearch = search === '' ||
+          b.name.toLowerCase().includes(search.toLowerCase()) ||
+          b.pet_name.toLowerCase().includes(search.toLowerCase()) ||
+          b.service.toLowerCase().includes(search.toLowerCase())
+
+          return matchesFilter && matchesSearch
     })
+    
 
         React.useEffect(() => {
           getAllBookings().then(setBookings)
@@ -38,6 +45,8 @@ const Appointments = () => {
   return () => { supabase.removeChannel(channel) }
 }, [])
     
+          const refetch = () => getAllBookings().then(setBookings)
+
   return (
     <>
     <div className="w-full min-h-screen flex flex-col  bg-lightLavender gap-8 py-4  pt-14 md:pt-0 pb-24">
@@ -62,19 +71,30 @@ const Appointments = () => {
       <div className="w-full h-auto px-8 flex flex-col gap-8">
 
           <div className="flex flex-col justify-center items-center sm:flex-row gap-4 w-full">
-            <input className="sm:w-1/2 w-full bg-white/80 text-base text-text rounded-xl px-6 py-2 border-none"
+            <input onChange={(e) => setSearch(e.target.value)} value={search}
+                  className="sm:w-1/2 w-full bg-white/80 text-base text-text rounded-xl px-6 py-2 border-none"
                   placeholder="Search by name, pet, service ..."/>
             <div className=" flex gap-2 sm:gap-4">
-              <button className="dashboard-btn">All</button>
-              <button className="dashboard-btn">Confirmed</button>
-              <button className="dashboard-btn">Pending</button>
-              <button className="dashboard-btn">Done</button>
+              <button onClick= {() => setFilter('All')}
+                      className={`dashboard-btn ${filter === 'All' ? 'bg-headline text-white' : ''}`}>All</button>
+
+              <button onClick= {() => setFilter('Confirmed')}
+                      className={`dashboard-btn ${filter === 'Confirmed' ? 'bg-headline text-white' : ''}`}>
+                        Confirmed</button>
+
+              <button onClick= {() => setFilter('Pending')}
+                      className={`dashboard-btn ${filter === 'Pending' ? 'bg-headline text-white' : ''}`}>
+                Pending</button>
+
+              <button onClick= {() => setFilter('Done')}
+                      className={`dashboard-btn ${filter === 'Done' ? 'bg-headline text-white' : ''}`}>
+                    Done</button>
             </div>
           </div>
 
               {/* ── MOBILE: card list ── */}
       <div className=" w-full h-auto bg-white/80 flex flex-col gap-2 p-4 rounded-xl sm:hidden">
-                 {bookings.map((b, i) => (
+                 {filtered.map((b, i) => (
           <div key={i} className="flex items-start justify-between py-4 border-b border-text/20 last:border-0">
 
             {/* Left: pet · service, owner · date */}
@@ -89,7 +109,7 @@ const Appointments = () => {
             {/* Right: status badge */}
             <div className="flex items-center gap-4">
               
-            <StatusActions id={b.id} status={b.status} />
+            <StatusActions id={b.id} status={b.status} onUpdate={refetch} />
             </div>
 
           </div>
@@ -126,7 +146,7 @@ const Appointments = () => {
           </tr>
         </thead>
         <tbody className="w-full px-4">
-          {bookings.map((b, i) => (
+          {filtered.map((b, i) => (
             <tr key={i} className="border-b border-text/10 last:border-0">
               <td className="py-4 px-3 text-text pl-4 font-medium">{b.name}</td>
               <td className="py-4 px-3">

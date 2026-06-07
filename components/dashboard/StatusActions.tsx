@@ -5,17 +5,21 @@ import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
 
-const StatusActions = ({ id, status } : { id: string, status: Status }) => {
+const StatusActions = ({ id, status, onUpdate } : { id: string, status: Status, onUpdate:() => void }) => {
   const router = useRouter()
 
   const [current, setCurrent] = React.useState<Status>(status)
   const [loading, setLoading] = useState(false)
+  React.useEffect(() => {
+  setCurrent(status)
+}, [status])
 
   const handleUpdate = async (newStatus: Status) => {
     setLoading(true)
     setCurrent(newStatus)
     await updateBookingStatus(id, newStatus)
-    router.refresh()
+    onUpdate()
+    
     setLoading(false)
   }
 
