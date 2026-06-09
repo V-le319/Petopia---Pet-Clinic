@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useSession, signOut } from 'next-auth/react'
 
 const allowedEmails = [
-  'vincy.lenguyen@gmail.com',
+  
   'vincykat@gmail.com',
 ]
 
@@ -18,10 +18,6 @@ const Navbar = () => {
   const { data: session, status } = useSession();
 
   const isAdmin = allowedEmails.includes(session?.user?.email ?? '')
-  
-
-  console.log('session:', session)
-console.log('image:', session?.user?.image)
 
   useEffect(() => {
   const handleScroll = () => setScrolled(window.scrollY > 10)
@@ -91,16 +87,16 @@ useEffect(() => {
 
         {/* Mobile */}
         {status === 'loading' ? null : session ? (
-  <div className='sm:hidden flex items-center self-center'>
-    {session.user?.image && (
-      <Image src={session.user.image} width={28} height={28} alt="avatar" className="rounded-full"/>
-    )}
-  </div>
-) : (
-  <Link href="/api/auth/signin" className='sm:hidden self-center p-1 rounded-full hover:text-white hover:bg-headline'>
-    <User size={22}/>
-  </Link>
-)}
+          <div className='sm:hidden flex items-center self-center'>
+               {session.user?.image && (
+            <Image src={session.user.image} width={28} height={28} alt="avatar" className="rounded-full"/>
+                 )}
+          </div>
+          ) : (
+          <Link href="/api/auth/signin" className='sm:hidden self-center p-1 rounded-full hover:text-white hover:bg-headline'>
+          <User size={22}/>
+          </Link>
+          )}
 
         
       </div>
@@ -111,9 +107,13 @@ useEffect(() => {
           <Link href="/#services" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>Services</Link>
           <Link href="/#about" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>About</Link>
           <Link href="/#contact" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>Contact</Link>
+          
+          {session && (
           <button onClick={() => signOut()}
                   className="w-full px-4 py-2 duration-200 text-smallTag hover:bg-headline hover:bg-opacity-80 hover:text-white flex items-center justify-center gap-2">
                     Sign Out<LogOut size={20}/></button>
+          )}
+
           <Link href="/#booking" className='button-reversed mt-2 self-center w-1/2 px-4 py-2 flex justify-center items-center'>Book Now</Link>
         </div>
       )}

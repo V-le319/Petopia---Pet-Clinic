@@ -48,8 +48,7 @@ export async function getBookingCounts() : Promise<{ total : number; today: numb
     if(error) throw Error(error.message)
 
     const all = data as Booking[]
-    console.log('dates from supabase:', all.map(b => b.date))
-console.log('today:', today)
+    
     return {
         total: all.length,
         today: all.filter(b => b.date === today).length,
