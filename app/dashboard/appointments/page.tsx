@@ -10,10 +10,11 @@ import StatusActions from '@/components/dashboard/StatusActions'
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 
-
+const allowedEmails = ['vincykat@gmail.com']
 
 const Appointments = () => {
     const { data : session } = useSession()
+    const isAdmin = allowedEmails.includes(session?.user?.email ?? '')
 
     const [bookings, setBookings] = React.useState<Booking[]>([])
 
@@ -109,7 +110,7 @@ const Appointments = () => {
             {/* Right: status badge */}
             <div className="flex items-center gap-4">
               
-            <StatusActions id={b.id} status={b.status} onUpdate={refetch} />
+            <StatusActions id={b.id} status={b.status} onUpdate={refetch} isAdmin={isAdmin} />
             </div>
 
           </div>
@@ -164,7 +165,7 @@ const Appointments = () => {
               <td className="py-4 w-px whitespace-nowrap pr-4">
                 <div className="flex items-center gap-4">
                   
-                <StatusActions id={b.id} status={b.status} />
+                <StatusActions id={b.id} status={b.status} isAdmin={isAdmin} />
                 </div>
               </td>
             </tr>

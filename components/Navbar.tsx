@@ -11,6 +11,7 @@ const allowedEmails = [
   'vincykat@gmail.com',
 ]
 
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -57,7 +58,7 @@ useEffect(() => {
         <Link href="/#services" className='links'>Services</Link>
         <Link href="/#about" className='links'>About</Link>
         <Link href="/#contact" className='links'>Contact</Link>
-        {isAdmin && <Link href="/dashboard" className='links'>Dashboard</Link>}
+        <Link href="/dashboard" className='links'>Dashboard</Link>
       </div>
 
       <div className='w-1/3 flex justify-end gap-4 sm:gap-6'>
@@ -103,7 +104,7 @@ useEffect(() => {
 
       {isOpen && (
         <div className='absolute top-full left-0 w-full bg-white flex flex-col text-center text-base py-4 sm:hidden'>
-          {isAdmin && <Link href="/dashboard" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>Dashboard</Link>}
+          <Link href="/dashboard" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>Dashboard</Link>
           <Link href="/#services" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>Services</Link>
           <Link href="/#about" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>About</Link>
           <Link href="/#contact" className='w-full px-4 py-2 duration-200 hover:bg-headline hover:bg-opacity-80 hover:text-white'>Contact</Link>

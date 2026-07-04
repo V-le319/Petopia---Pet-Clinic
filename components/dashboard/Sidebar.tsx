@@ -2,7 +2,8 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useSession } from 'next-auth/react'
+import { useSession, signOut } from 'next-auth/react'
+import { LogOut } from 'lucide-react'
 
 const Sidebar = () => {
   const { data: session} = useSession()
@@ -53,6 +54,9 @@ const Sidebar = () => {
                       <span>{session.user?.name}</span>
                  </div>     
                     )}
+                     <button onClick={() => signOut()} className="text-white/60 hover:text-red-300">
+              <LogOut size={18} />
+            </button>
         </div>
       </div>
     </div>
@@ -68,7 +72,7 @@ const Sidebar = () => {
       </div>
       </Link>
 
-      <div>
+      <div className="flex flex-row gap-2">
         {session?.user?.image && (
                       <Image
                         src={session.user.image}
@@ -78,6 +82,9 @@ const Sidebar = () => {
                         className="rounded-full"
                       />
                     )}
+                     <button onClick={() => signOut()} className="text-white/60 hover:text-red-300">
+              <LogOut size={18} />
+            </button>
       </div>
 
     </div>

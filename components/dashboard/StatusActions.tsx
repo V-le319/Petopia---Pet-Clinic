@@ -3,9 +3,9 @@ import { CalendarCheck, CheckCircle } from 'lucide-react'
 import { updateBookingStatus, statusBadge, type Status } from '@/lib/bookings'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
+import { toast } from 'sonner'
 
-
-const StatusActions = ({ id, status, onUpdate } : { id: string, status: Status, onUpdate:() => void }) => {
+const StatusActions = ({ id, status, onUpdate, isAdmin } : { id: string, status: Status, onUpdate:() => void, isAdmin: boolean }) => {
   const router = useRouter()
 
   const [current, setCurrent] = React.useState<Status>(status)
@@ -15,6 +15,10 @@ const StatusActions = ({ id, status, onUpdate } : { id: string, status: Status, 
 }, [status])
 
   const handleUpdate = async (newStatus: Status) => {
+    if (!isAdmin) {
+      toast.info('Demo mode — editing is disabled')
+      return
+    }
     setLoading(true)
     setCurrent(newStatus)
     await updateBookingStatus(id, newStatus)
@@ -30,11 +34,11 @@ const StatusActions = ({ id, status, onUpdate } : { id: string, status: Status, 
     </span>
       <button onClick={() => handleUpdate('Confirmed')}
               disabled={loading}
-              className={`p-1.5 rounded-full transition-opacity ${
+               className={`p-1.5 rounded-full transition-opacity ${
                 current === 'Confirmed'
                 ? 'bg-highlight/60 opacity-100'
                 : 'bg-highlight/20 opacity-40'
-              }`}>
+              } ${!isAdmin ? 'cursor-not-allowed' : ''}`}>
         <CalendarCheck size={14} className="text-headline"/>
       </button>
       <button onClick={() => handleUpdate('Done')}
@@ -43,7 +47,7 @@ const StatusActions = ({ id, status, onUpdate } : { id: string, status: Status, 
                 current === 'Done'
                 ? 'bg-blue-300 opacity-100'
                 : 'bg-blue-100 opacity-40'
-              }`}>
+              } ${!isAdmin ? 'cursor-not-allowed' : ''}`}>
         <CheckCircle size={14} className="text-blue-700"/>
       </button>
     </div>
