@@ -23,6 +23,9 @@ module.exports = {
         lightBg: "#8E9EFE",
         highlight: "#47D7D1",
       },
+      animation: {
+    'spin-slow': 'spin 4s linear infinite',
+  },
     },
   },
   plugins: [require("@tailwindcss/typography"),

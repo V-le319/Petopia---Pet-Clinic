@@ -77,7 +77,7 @@ const BookingForm = () => {
     <>
     <section id="booking">
       
-      <div className="w-full h-full bg-mainBG/30 mb-8 px-10 sm:px-16 py-10 gap-6 sm:py-20 ">
+      <div className="w-full h-full bg-mainBG/30 mb-8 px-4 sm:px-16 py-10 gap-6 sm:py-20 ">
         <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-8">
             
             <FadeIn delay={0} >
@@ -147,15 +147,15 @@ const BookingForm = () => {
                 </div>
 
                   <div className="form-input w-full sm:px-10">
-                  <label className="content_text font-medium">Note (Optional)</label>
+                  <label className="text-mainBG font-medium">Note (Optional)</label>
                 <textarea className="content_text w-full h-auto rounded-lg p-2"
                           placeholder=""
                           value={note} 
                           onChange={(e) => setNote(e.target.value)}/>
                 </div>
                 
-                <button className="button-reversed w-full py-2 sm:mt-6 sm:py-4 sm:w-1/2"
-                        type="submit">Confirm Booking 🐾</button>
+                <button className="bg-darkBg border-darkBg border-2 tracking-wide font-medium text-lg rounded-md text-mainBG hover:bg-darkHover/60 w-full py-2 sm:mt-6 sm:py-4 sm:w-1/2"
+                        type="submit">Confirm Booking</button>
               </form>
               </FadeIn>
         </div>

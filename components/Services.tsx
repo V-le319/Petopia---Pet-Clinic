@@ -51,7 +51,7 @@ const Services = () => {
 
   return (
     <>
-    <section id="services" className="w-full h-full bg-mainBG/30 mb-8 px-10 sm:px-16 py-10 gap-6 sm:py-20 ">
+    <section id="services" className="w-full h-full bg-mainBG/30 mb-8 px-4 sm:px-16 py-10 gap-6 sm:py-20 ">
       
       <div className="max-w-6xl mx-auto flex flex-col gap-4 sm:gap-8">
       
@@ -63,7 +63,7 @@ const Services = () => {
       </FadeIn>
 
       <FadeIn delay={0.2}>
-      <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-10">
+      <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10">
         {services.map((service) => (
           <div className="grid-card "
                 key={service.title}>
@@ -84,7 +84,7 @@ const Services = () => {
               <div className="w-full grid grid-cols-2  ">
                 <p className="text-2xl text-headline font-semibold">{service.price}</p>
                 <Link href="#booking"
-                      className="button flex items-center justify-center">
+                      className="button-reversed flex items-center justify-center">
                         Booking
                   </Link>
               </div>

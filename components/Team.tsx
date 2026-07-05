@@ -45,45 +45,41 @@ const Team = () => {
 
   return (
     <>
-    <section  id="team"
-              className=" h-auto px-10 sm:px-16 py-10 gap-6 sm:py-20"
-              style={{ background: 'linear-gradient(to top, transparent 0%, #5750A920 15%, #5750A960 100%, #5750A9 100%)' }}>
-        
-        
-        <div className="max-w-6xl mx-auto flex flex-col  gap-8">
-          <FadeIn  delay={0}>
-          <div className="w-full sm:w-1/2 mb-4 flex flex-row justify-start items-start gap-4">
-              <h1 className="heading sm:text-5xl">Meet Our Team</h1>
-          </div>
-          </FadeIn>
-          
-          <FadeIn delay={0.2}>
-          <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-6 ">
-              {team.map((team) => (
-                <div className="team-card flex flex-row items-stretch"
-                      key={team.name}>
-                  <div className="relative w-[100px] min-h-[100px] flex-shrink-0 rounded-lg self-stretch overflow-hidden bg-tagHover/40">
-                                  <Image src={team.image}
-                                         alt={team.name}
-                                         fill
-                                          className="object-cover object-center"/>
-                                </div>
-                  
-                                <div className="flex flex-col justify-between gap-4 flex-1">
-                                  <h2 className="sm:text-2xl text-xl text-headline font-semibold">{team.name}</h2>
-                                  <div className="h-px bg-text/50"></div>
-                                  <p className="text-text text-sm">{team.description}</p>
-                                </div>
+  <section id="team" className="h-auto px-4 sm:px-16 gap-6 py-10 sm:py-20">
+    <div className="max-w-6xl mx-auto flex flex-col items-center gap-3 mb-12">
+      <FadeIn delay={0}>
+        <h1 className="heading sm:text-5xl text-center">Meet Our Team</h1>
+        <p className="text-text text-sm text-center mt-2">
+          The elite hands caring for your family's best friends.
+        </p>
+      </FadeIn>
+    </div>
 
-                </div>
-              ))}
-          </div>
-          </FadeIn>
-        </div>
+    <FadeIn delay={0.2}>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-10">
+        {team.map((member) => (
+          <div className="flex flex-col items-center text-center gap-2" key={member.name}>
+            
+            <div className="w-24 h-24 rounded-full border-2  border-headline/40 p-1">
+              <div className="relative w-full h-full rounded-full overflow-hidden bg-tagHover/40">
+                <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-center"
+                />
+              </div>
+            </div>
 
-        
-    </section>
-    </>
+            <h2 className="text-lg text-headline font-semibold mt-2">{member.name}</h2>
+            <p className="text-highLight text-sm font-medium">{member.major}</p>
+            <p className="text-text text-sm max-w-[240px]">{member.description}</p>
+          </div>
+        ))}
+      </div>
+    </FadeIn>
+  </section>
+</>
   )
 }
 

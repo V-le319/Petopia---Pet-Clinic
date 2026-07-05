@@ -47,9 +47,9 @@ useEffect(() => {
 }`}>
       <Link href="/" className='w-1/3 flex items-center gap-2'>
       <div className='flex items-center gap-2'>
-        <img src="/images/petopia-logo-Photoroom.png"
-              width={40}
-              height={60}/>
+        <img src="/images/Icon-logo.png"
+              width={30}
+              height={30}/>
         <p className='logo'>Petopia</p>
       </div>
       </Link>

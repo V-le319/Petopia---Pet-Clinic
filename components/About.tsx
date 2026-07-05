@@ -12,28 +12,15 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="w-screen bg-opacity-30 px-10 sm:px-16 py-10 gap-6 sm:py-20"
-      style={{ background: 'linear-gradient(to bottom, transparent 0%, #5750A920 20%, #5750A960 70%, #5750A9 90%, #5750A960 100%)' }}
-    >
+    <section id="about" className="w-screen bg-opacity-30 px-4 sm:px-16 py-10 gap-6 sm:py-20" >
 
       <FadeIn className="w-full">
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#FBF8FF4D] to-transparent pointer-events-none" />
       {/* Top: image + content */}
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center gap-11 sm:gap-16 mb-12">
-        
-        {/* Image */}
-        <div className="flex-shrink-0 w-full sm:w-1/2 h-72 rounded-2xl overflow-hidden relative">
-          <Image
-            src="/images/close-up-smiling-female-doctor-stroking-pet-dog-examination-vet-clinic_960396-496629.jpg"
-            alt="Vet with pet"
-            fill
-            className="object-cover"
-          />
-        </div>
-
-        {/* Text */}
+         {/* Text */}
         <div className="flex-1">
-          <span className="inline-block text-xs tracking-widest uppercase bg-white/35 text-smallTag font-normal px-3 py-1 rounded-full mb-6">
+          <span className="inline-block text-xs tracking-widest uppercase bg-tagHover text-smallTag font-normal px-3 py-1 rounded-full mb-6">
             About us
           </span>
           <h1 className="heading sm:text-5xl font-semibold heading leading-snug mb-4">
@@ -45,32 +32,41 @@ const About = () => {
             groomers treat every animal like their own.
           </p>
 
-        <div className="sm:w-3/4 grid grid-cols-2 gap-4 ">
-          <Link href="/#team"><button className="inline-flex items-center  button-reversed duration-200 text-white text-sm font-medium px-4 py-2.5 rounded-full">
+        <div className="sm:w-3/4 flex gap-2 sm:gap-4">
+          <Link href="/#team"><button className="inline-flex items-center  button duration-200 text-white text-sm font-medium px-4 py-2.5 rounded-full">
             Our Medical Team
           </button>
           </Link>
 
-          <Link href="/#facilities"><button className="inline-flex items-center  button-reversed duration-200 text-white text-sm font-medium px-4 py-2.5 rounded-full">
+          <Link href="/#facilities"><button className="inline-flex items-center  button duration-200 text-white text-sm font-medium px-4 py-2.5 rounded-full">
             Our Facilities
           </button>
           </Link>
         </div>
           
         </div>
+        {/* Image */}
+        <div className="flex-shrink-0 w-full sm:w-1/2 h-72 rounded-2xl overflow-hidden relative">
+          <Image
+            src="/images/about.png"
+            alt="Vet with pet"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+       
       </div>
 
       {/* Stats strip */}
-      <div className="max-w-4xl mx-auto flex items-center justify-around pt-8 border-t border-white/25">
-        {stats.map((stat, index) => (
-          <React.Fragment key={stat.headline}>
-            <div className="text-center">
-              <h3 className="text-white text-3xl font-medium mb-1">{stat.headline}</h3>
-              <p className="text-white/70 text-xs tracking-wide">{stat.description}</p>
-            </div>
-            {index < stats.length - 1 && (
-              <div className="w-px h-9 bg-white/25" />
-            )}
+       <div className="max-w-6xl mx-auto rounded-2xl bg-[#5750A9] px-8 py-8 flex items-center justify-around">
+          {stats.map((stat, index) => (
+            <React.Fragment key={stat.headline}>
+              <div className="text-center">
+                <h3 className="text-white text-3xl font-medium mb-1">{stat.headline}</h3>
+                <p className="text-white/70 text-xs tracking-wide">{stat.description}</p>
+              </div>
+              {index < stats.length - 1 && <div className="w-px h-9 bg-white/25" />}
           </React.Fragment>
         ))}
       </div>

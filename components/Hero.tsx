@@ -7,7 +7,7 @@ import FadeIn from './FadeIn'
 const Hero = () => {
   return (
     <>
-    <section className="w-screen h-full flex bg-mainBG/30 justify-center items-start flex-col px-10 sm:px-16 py-10 pt-12 sm:pt-16 gap-6 sm:py-20 ">
+    <section className="w-screen h-full flex bg-mainBG/30 justify-center items-start flex-col px-4 sm:px-16 py-10 pt-12 sm:pt-16 gap-6 sm:py-20 ">
       <FadeIn className="w-full">
     <div id="hero" className="max-w-6xl mx-auto grid grid-cols-1  items-start sm:grid-cols-2 gap-12">
       <div className="content flex flex-col gap-6">
@@ -23,11 +23,10 @@ const Hero = () => {
     
 
     <div className="w-full h-[400px] sm:h-[500px] relative">
-      <Image src="/images/360_F_335129835_9hAvCOWfyEYZxOHW1lD3w8E1Ai2rBgdB.jpg"
+      <Image src="/images/hero.png"
       alt="happy pet"
       fill
-      className=" rounded-2xl object-cover drop-shadow-sm"/>
-      
+      className="[mask-image:radial-gradient(ellipse_at_center,black_80%,transparent_100%)] rounded-2xl object-cover drop-shadow-sm"/>
     </div>
 
     </div>

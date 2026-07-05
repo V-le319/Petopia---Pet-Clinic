@@ -63,12 +63,12 @@
   }
 
   .button {
-    @apply text-center whitespace-nowrap text-headline font-medium sm:text-base text-sm bg-transparent px-5 py-2 shadow-sm  shadow-headline rounded-xl hover:text-white hover:bg-headline
+    @apply text-center whitespace-nowrap text-headline font-medium sm:text-base text-sm bg-transparent px-5 py-2 border border-headline duration-300  rounded-xl hover:text-white hover:bg-gradient-to-r from-headline to-lightPurple
   }
 
   .button-reversed {
-    @apply text-center whitespace-nowrap hover:text-headline hover:bg-mainBG font-medium text-base bg-transparent px-5 py-2 shadow-sm  shadow-headline rounded-xl text-white bg-headline
-  }
+  @apply text-center whitespace-nowrap font-medium text-base px-5 py-2 rounded-xl text-white shadow-sm shadow-headline bg-gradient-to-r from-headline to-lightPurple hover:bg-none  hover:text-headline transition-opacity duration-300;
+}
 
   .login-btn {
     @apply text-center whitespace-nowrap text-white font-medium duration-200 text-base px-5 py-2 shadow-sm bg-headline rounded-xl hover:bg-darkHover;
@@ -80,7 +80,7 @@
 }
 
 .grid-card {
-  @apply rounded-2xl bg-white flex flex-col justify-between items-start gap-4 p-4 border-headline border drop-shadow-md;
+  @apply rounded-2xl bg-white flex flex-col justify-between items-start gap-4 p-4 shadow-md shadow-headline/40;
 }
 
 .review-card {
@@ -106,15 +106,15 @@
 }
 
 .form {
-  @apply w-full h-full px-6 sm:px-10 sm:py-14 py-10 flex flex-col rounded-2xl gap-8 justify-center items-center bg-headline/40
+  @apply w-full h-full px-6 sm:px-10 sm:py-14 py-10 flex flex-col rounded-2xl gap-8 justify-center items-center bg-gradient-to-r from-headline to-lightPurple
 }
 
 .form-input {
-  @apply w-full content_text font-medium flex flex-col justify-center items-start gap-2
+  @apply w-full text-mainBG font-medium flex flex-col justify-center items-start gap-2
 }
 
 .input {
-  @apply w-full px-2 h-10 rounded-lg bg-white
+  @apply w-full px-2 h-10 rounded-lg bg-darkBg/50
 }
 
 .sidebar {
