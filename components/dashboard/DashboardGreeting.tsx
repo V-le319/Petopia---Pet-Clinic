@@ -22,7 +22,7 @@ import { useSession } from "next-auth/react"
         const firstName = session?.user?.name?.split(' ')[0] ?? 'Admin'
 
   return (
-    <div className="w-full h-auto p-4 px-10 bg-white/80 mt-6">
+    <div className="w-full h-auto p-2 px-10 bg-white/80 mt-6">
       <div className="flex items-center gap-2">
         <span className="text-2xl font-medium text-headline">
           {getGreeting()}, {firstName}

@@ -16,9 +16,9 @@ const Sidebar = () => {
       <div>
         <Link href="/">
       <div className='flex px-4 items-center gap-2  mb-4'>
-        <img src="/images/petopia-logo-Photoroom.png"
-              width={40}
-              height={60}/>
+        <img src="/images/Icon-reversed.png"
+              width={30}
+              height={30}/>
         <p className='sidebarLogo'>Petopia</p>
       </div>
       </Link>
@@ -65,9 +65,9 @@ const Sidebar = () => {
      
         <Link href="/">
       <div className='flex items-center gap-2'>
-        <img src="/images/petopia-logo-Photoroom.png"
-              width={40}
-              height={60}/>
+        <img src="/images/Icon-reversed.png"
+              width={30}
+              height={30}/>
         <p className='sidebarLogo'>Petopia</p>
       </div>
       </Link>

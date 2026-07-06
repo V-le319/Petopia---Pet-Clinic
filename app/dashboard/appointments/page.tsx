@@ -71,11 +71,11 @@ const Appointments = () => {
 
       <div className="w-full h-auto px-8 flex flex-col gap-8">
 
-          <div className="flex flex-col justify-center items-center sm:flex-row gap-4 w-full">
+          <div className="flex flex-col justify-center items-center gap-4 w-full">
             <input onChange={(e) => setSearch(e.target.value)} value={search}
-                  className="sm:w-1/2 w-full bg-white/80 text-base text-text rounded-xl px-6 py-2 border-none"
+                  className=" w-full bg-white/80 text-base text-text rounded-xl px-6 py-2 border-none"
                   placeholder="Search by name, pet, service ..."/>
-            <div className=" flex gap-2 sm:gap-4">
+            <div className=" w-full grid grid-cols-2 sm:grid-cols-4 text-sm gap-2">
               <button onClick= {() => setFilter('All')}
                       className={`dashboard-btn ${filter === 'All' ? 'bg-headline text-white' : ''}`}>All</button>
 

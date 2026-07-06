@@ -59,7 +59,7 @@ const About = () => {
       </div>
 
       {/* Stats strip */}
-       <div className="max-w-6xl mx-auto rounded-2xl bg-[#5750A9] px-8 py-8 flex items-center justify-around">
+       <div className="-mx-10 sm:-mx-16 bg-[#5750A9]/90 px-10 sm:px-32 py-8 flex items-center justify-around">
           {stats.map((stat, index) => (
             <React.Fragment key={stat.headline}>
               <div className="text-center">

@@ -122,7 +122,7 @@
 }
 
 .topbar {
-  @apply sm:hidden flex justify-between items-center py-10 px-4 w-full h-16 bg-headline text-white fixed top-0 left-0 right-0 z-40
+  @apply sm:hidden flex justify-between items-center py-4 px-4 w-full h-16 bg-headline text-white fixed top-0 left-0 right-0 z-40
 }
 
 .bottombar {
@@ -135,7 +135,7 @@
 }
 
 .bottom-heading {
-  @apply text-white text-base font-medium hover:text-highlight ;
+  @apply text-white text-base font-normal hover:text-highlight ;
   font-family: var(--font-figtree);
 }
 
