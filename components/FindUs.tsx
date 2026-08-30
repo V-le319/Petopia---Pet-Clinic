@@ -26,7 +26,7 @@ const FindUs = () => {
   ]
   return (
     <>
-    <section id="contact" className="w-full bg-mainBg/40 gap-6 sm:pt-10">
+    <section id="contact" className="w-full bg-mainBg/40 gap-6  ">
       <FadeIn className="w-full">
       <div className="flex flex-col items-center justify-center">
       
@@ -36,7 +36,7 @@ const FindUs = () => {
         <br/>Reach out and we'll get back to you as soon as possible.</p>
       </div>
       
-      <div className="w-full h-auto bg-darkBg/85 px-10 sm:px-16 py-10 sm:py-20 gap-10 flex flex-col justify-center items-center text-center">
+      <div className="w-full h-auto bg-darkBg/85 md:mt-8 px-10 sm:px-16 py-10 sm:py-20 gap-10 flex flex-col justify-center items-center text-center">
             <div className="text-center">
               <h1 className="subheading-reversed">Find Us</h1>
               <p className="content_text-reversed">We're easy to reach, find our details below.</p>

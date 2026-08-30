@@ -51,7 +51,7 @@ const Services = () => {
 
   return (
     <>
-    <section id="services" className="w-full h-full bg-mainBG/30  px-4 md:px-16 py-8 gap-4 md:gap-6 md:py-12">
+    <section id="services" className="w-full h-full bg-mainBG/30 md:mb-8 px-4 md:px-16 py-8 gap-4 md:gap-6 md:py-12">
       
       <div className="max-w-6xl mx-auto flex flex-col gap-4 md::gap-8">
       
