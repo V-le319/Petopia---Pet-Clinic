@@ -2,9 +2,9 @@ import Appointment from '@/components/dashboard/Appointment'
 import DashboardGreeting from '@/components/dashboard/DashboardGreeting'
 import Schedule from '@/components/dashboard/Schedule'
 import { getBookingCounts } from '@/lib/bookings'
-
-
 import React from 'react'
+
+export const dynamic = 'force-dynamic'
 
 const Dashboard = async () => {
 
