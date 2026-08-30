@@ -106,11 +106,11 @@
 }
 
 .form {
-  @apply w-full h-full px-6 sm:px-10 sm:py-14 py-10 flex flex-col rounded-2xl gap-8 justify-center items-center bg-gradient-to-r from-headline to-lightPurple
+  @apply w-full h-full px-4 md:px-10 sm:py-14 py-10 flex flex-col rounded-2xl gap-6 justify-center items-center bg-gradient-to-r from-headline to-lightPurple
 }
 
 .form-input {
-  @apply w-full text-mainBG font-medium flex flex-col justify-center items-start gap-2
+  @apply w-full text-mainBG font-medium flex flex-col justify-center items-start gap-2 md:gap-4
 }
 
 .input {

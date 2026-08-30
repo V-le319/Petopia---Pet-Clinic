@@ -51,12 +51,12 @@ const Services = () => {
 
   return (
     <>
-    <section id="services" className="w-full h-full bg-mainBG/30 mb-8 px-4 sm:px-16 py-10 gap-6 sm:py-20 ">
+    <section id="services" className="w-full h-full bg-mainBG/30  px-4 md:px-16 py-8 gap-4 md:gap-6 md:py-12">
       
-      <div className="max-w-6xl mx-auto flex flex-col gap-4 sm:gap-8">
+      <div className="max-w-6xl mx-auto flex flex-col gap-4 md::gap-8">
       
       <FadeIn delay={0}>
-      <div className="w-full sm:w-1/2 flex flex-col justify-start items-start gap-4 mb-8">
+      <div className="w-full sm:w-1/2 flex flex-col justify-start items-start gap-4 mb-4">
         <h1 className="heading sm:text-5xl">Our Services</h1>
         <p className="content_text">Everything your pet needs, all in one place. From routine visits to emergency care, we've got them covered.</p>
       </div>

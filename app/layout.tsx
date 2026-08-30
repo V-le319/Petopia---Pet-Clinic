@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body className="relative min-h-screen bg-[url('/images/wallpaper.jpg')] bg-repeat bg-auto bg-fixed">
+      <body className="relative min-h-screen max-w-[100vw] overflow-x-hidden bg-[url('/images/wallpaper.jpg')] bg-repeat bg-auto bg-fixed">
         <Providers> 
         {children}
         <Toaster />

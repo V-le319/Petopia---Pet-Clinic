@@ -42,7 +42,7 @@ useEffect(() => {
 
 
   return (
-    <div className={`max-w-screen sticky top-0 left-0 right-0 z-50 h-auto p-4  flex-between transition-all duration-300 ${
+    <div className={`w-full sticky top-0 left-0 right-0 z-50 h-auto p-4  flex-between transition-all duration-300 ${
   scrolled ? 'bg-white/50 backdrop-blur-sm' : 'bg-white navbar-shadow'
 }`}>
       <Link href="/" className='w-1/3 flex items-center gap-2'>

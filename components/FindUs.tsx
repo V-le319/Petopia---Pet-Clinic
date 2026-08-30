@@ -26,7 +26,7 @@ const FindUs = () => {
   ]
   return (
     <>
-    <section id="contact" className="w-screen bg-mainBg/40 gap-6 sm:pt-10">
+    <section id="contact" className="w-full bg-mainBg/40 gap-6 sm:pt-10">
       <FadeIn className="w-full">
       <div className="flex flex-col items-center justify-center">
       

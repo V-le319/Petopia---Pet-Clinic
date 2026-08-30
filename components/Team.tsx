@@ -45,8 +45,8 @@ const Team = () => {
 
   return (
     <>
-  <section id="team" className="h-auto px-4 sm:px-16 gap-6 py-10 sm:py-20">
-    <div className="max-w-6xl mx-auto flex flex-col items-center gap-3 mb-12">
+  <section id="team" className="h-auto px-4 md:px-16 py-8 gap-4 md:gap-6 md:py-12">
+    <div className="max-w-6xl mx-auto flex flex-col items-center gap-3 mb-8">
       <FadeIn delay={0}>
         <h1 className="heading sm:text-5xl text-center">Meet Our Team</h1>
         <p className="text-text text-sm text-center mt-2">
@@ -56,9 +56,9 @@ const Team = () => {
     </div>
 
     <FadeIn delay={0.2}>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         {team.map((member) => (
-          <div className="flex flex-col items-center text-center gap-2" key={member.name}>
+          <div className="flex flex-col items-center text-center gap-1" key={member.name}>
             
             <div className="w-24 h-24 rounded-full border-2  border-headline/40 p-1">
               <div className="relative w-full h-full rounded-full overflow-hidden bg-tagHover/40">

@@ -12,13 +12,13 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="w-screen bg-opacity-30 px-4 sm:px-16 py-10 gap-6 sm:py-20" >
+    <section id="about" className="w-full bg-opacity-30 px-4 md:px-16 py-8 gap-4 md:gap-6 md:py-16" >
 
       <FadeIn className="w-full">
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#FBF8FF4D] to-transparent pointer-events-none" />
       {/* Top: image + content */}
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center gap-11 sm:gap-16 mb-12">
-         {/* Text */}
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center gap-6 sm:gap-16 mb-6">
+        
         <div className="flex-1">
           <span className="inline-block text-xs tracking-widest uppercase bg-tagHover text-smallTag font-normal px-3 py-1 rounded-full mb-6">
             About us
@@ -26,7 +26,7 @@ const About = () => {
           <h1 className="heading sm:text-5xl font-semibold heading leading-snug mb-4">
             A clinic built on<br />love for animals
           </h1>
-          <p className="content_text leading-relaxed mb-6">
+          <p className="content_text leading-relaxed mb-4">
             Founded in 2015, PawClinic has been a go-to veterinary care center
             in Saigon for over 2,000 families. Our team of licensed vets and
             groomers treat every animal like their own.
@@ -59,7 +59,7 @@ const About = () => {
       </div>
 
       {/* Stats strip */}
-       <div className="-mx-10 sm:-mx-16 bg-[#5750A9]/90 px-10 sm:px-32 py-8 flex items-center justify-around">
+       <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] bg-[#5750A9]/90 px-10 sm:px-32 py-8 flex items-center justify-around">
           {stats.map((stat, index) => (
             <React.Fragment key={stat.headline}>
               <div className="text-center">

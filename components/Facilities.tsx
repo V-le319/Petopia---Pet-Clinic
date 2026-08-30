@@ -34,11 +34,11 @@ const Facilities = () => {
     
   return (
     <>
-    <section id="facilities" className="w-full h-full bg-mainBG/30 mb-8 px-4 py-10 gap-6 sm:py-16 ">
+    <section id="facilities" className="w-full h-full bg-mainBG/30  px-4 md:px-16 py-8 gap-4 md:gap-6 md:py-12 ">
       <FadeIn className="w-full">
       <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-6">
         
-        <div className="mb-4">
+        <div className="mb-2">
             <span className="inline-block text-xs tracking-widest uppercase bg-tagHover text-smallTag font-normal px-3 py-1 rounded-full mb-4">
             Our Facilities
             </span>

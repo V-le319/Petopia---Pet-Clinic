@@ -7,7 +7,7 @@ import FadeIn from './FadeIn'
 const Hero = () => {
   return (
     <>
-    <section className="w-screen h-full flex bg-mainBG/30 justify-center items-start flex-col px-4 sm:px-16 py-10 pt-12 sm:pt-16 gap-6 sm:py-20 ">
+    <section className="w-full h-full flex bg-mainBG/30 justify-center items-start flex-col px-4 md:px-16 py-8 gap-4 md:gap-6 md:py-16 ">
       <FadeIn className="w-full">
     <div id="hero" className="max-w-6xl mx-auto grid grid-cols-1  items-start sm:grid-cols-2 gap-12">
       <div className="content flex flex-col gap-6">

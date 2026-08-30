@@ -77,8 +77,8 @@ const BookingForm = () => {
     <>
     <section id="booking">
       
-      <div className="w-full h-full bg-mainBG/30 mb-8 px-4 sm:px-16 py-10 gap-6 sm:py-20 ">
-        <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-8">
+      <div className="w-full h-full bg-mainBG/30 px-4 md:px-16 py-6 gap-2 md:gap-6 md:py-12">
+        <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-4">
             
             <FadeIn delay={0} >
               <div className='text-center'>
@@ -92,7 +92,7 @@ const BookingForm = () => {
             <FadeIn delay={0.2} className="w-full">
               <form className="form"
                     onSubmit={handleSubmit}>
-                <div className="info w-full grid grid-cols-1 sm:px-10 sm:gap-10 sm:grid-cols-2 gap-6">
+                <div className="info w-full grid grid-cols-1 sm:px-10 sm:gap-10 sm:grid-cols-2 gap-2">
                   <div className="form-input">
                     <label>Your Name:</label>
                     <input className="input" 
